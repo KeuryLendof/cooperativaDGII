@@ -1,24 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content class="ion-padding ion-text-center" [fullscreen]="true">
+<ion-content [fullscreen]="true">
+
+  <div class="contenedor">
+    <img src="../../../assets/img/adawel2.jpg"/>
+    <div class="centrado">Hola Adawel</div>
+    <div class="centrado2">Ultima conexion: 10/08/2021 4:01:30 pm</div>
+    <div class="centrado3">
+      <ion-item class="drowlist">
+        <ion-label>Mostrar: Todos mis productos</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+  </div>
+
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-menu-button></ion-menu-button>
+  </ion-fab>
 
   <ion-fab vertical="top" horizontal="end" slot="fixed">
-    
     <ion-icon name="notifications-outline"></ion-icon>
-
   </ion-fab>
-  <br>
-  <ion-item>
-    <ion-label>Mostrar: Todos mis productos</ion-label>
-    <ion-select placeholder="Select One">
-      <ion-select-option value="f">Female</ion-select-option>
-      <ion-select-option value="m">Male</ion-select-option>
-    </ion-select>
-  </ion-item>
+  
   <br>
 
   <!-- <ion-item>
@@ -35,79 +40,61 @@
     <ion-label>Toggle</ion-label>
     <ion-toggle slot="end"></ion-toggle>
   </ion-item> -->
-  <ion-item>
-    <ion-icon name="card-outline"></ion-icon>
-    <ion-label>Cuentas</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Cuenta Aportaciones
-      <ion-input value="100000103038" readonly></ion-input>
-    </ion-label>
-    
-    <ion-label slot="end">Balance disponible
-      <ion-input slot="end" value="350,00DOP" readonly></ion-input>
-    </ion-label>
-    
-  </ion-item>
-  <br>
-  <ion-item>
-    <ion-icon name="cash-outline"></ion-icon>
-    <ion-label>Inversion</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Certificado Financiero
-      <ion-input value="100000103038" readonly></ion-input>
-    </ion-label>
-    
-    <ion-label slot="end">Balance disponible
-      <ion-input slot="end" value="150,00DOP" readonly></ion-input>
-    </ion-label>
-    
-  </ion-item>
-  <br>
-  <ion-item>
-    <ion-icon name="server-outline"></ion-icon>
-    <ion-label>Prestamos</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Prestamo Normal
-      <ion-input value="100000103038" readonly></ion-input>
-    </ion-label>
-    
-    <ion-label slot="end">Balance disponible
-      <ion-input slot="end" value="250,00DOP" readonly></ion-input>
-    </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Prestamo Gerencial
-      <ion-input value="100000103038" readonly></ion-input>
-    </ion-label>
-    <ion-label slot="end">Balance disponible
-      <ion-input slot="end" value="150,00DOP" readonly></ion-input>
-    </ion-label>
-  </ion-item>
-  <!-- <ion-item>
-    <ion-icon name="person-outline"></ion-icon>
-    <ion-input name="user" type="number" placeholder="Cédula"></ion-input>
-  </ion-item> -->
-  
+  <div class="ion-padding ion-text-center">
 
-  <!-- <ion-list>
     <ion-item>
-      <ion-label>Note (End)</ion-label>
-      <ion-note slot="end">On</ion-note>
+      <ion-icon name="card-outline"></ion-icon>
+      <ion-label class="titulos">Cuentas</ion-label>
     </ion-item>
-  
     <ion-item>
-      <ion-note slot="start">Off</ion-note>
-      <ion-label>Note (Start)</ion-label>
+      <ion-label class="subtitulos">Cuenta Aportaciones
+        <ion-input class="subsubtitulos" value="100000103038" readonly></ion-input>
+      </ion-label>
+      
+      <ion-label slot="end">Balance disponible
+        <ion-input slot="end" value="350,00DOP" readonly></ion-input>
+      </ion-label>
+      
     </ion-item>
-  </ion-list>
+    <br>
+    <ion-item>
+      <ion-icon name="cash-outline"></ion-icon>
+      <ion-label class="titulos">Inversion</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="subtitulos">Certificado Financiero
+        <ion-input class="subsubtitulos" value="100000103038" readonly></ion-input>
+      </ion-label>
+      
+      <ion-label slot="end">Balance disponible
+        <ion-input slot="end" value="150,00DOP" readonly></ion-input>
+      </ion-label>
+      
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-icon name="server-outline"></ion-icon>
+      <ion-label class="titulos">Prestamos</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="subtitulos">Prestamo Normal
+        <ion-input class="subsubtitulos" value="100000103038" readonly></ion-input>
+      </ion-label>
+      
+      <ion-label slot="end">Balance disponible
+        <ion-input slot="end" value="250,00DOP" readonly></ion-input>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="subtitulos">Prestamo Gerencial
+        <ion-input class="subsubtitulos" value="100000103038" readonly></ion-input>
+      </ion-label>
+      <ion-label slot="end">Balance disponible
+        <ion-input slot="end" value="150,00DOP" readonly></ion-input>
+      </ion-label>
+    </ion-item>
 
-  <ion-item>
-    <ion-label>Default Label</ion-label>
-    <ion-input value="1234567" readonly></ion-input>
-  </ion-item> -->
+  </div>
 
 </ion-content>
 
