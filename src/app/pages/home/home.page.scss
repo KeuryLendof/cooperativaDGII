@@ -2,13 +2,25 @@
     position: relative;
     display: inline-block;
     text-align: center;
+    
+}
+
+.contenedor img{
+    opacity: 0.4;
+    filter: alpha(opacity=40);
 }
 
 .centrado{
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: dodgerblue;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.centrado span{
     color: lawngreen;
 }
 
@@ -38,8 +50,8 @@ ion-fab{
 }
 
 ion-fab ion-icon{
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
 }
 
 ion-item ion-icon{
@@ -58,4 +70,13 @@ ion-item .subtitulos{
 
 ion-item .subtitulos .subsubtitulos{
     color: #fff;
+}
+
+ion-item .balanceDisponible{
+    text-align: right;
+    // position: relative;
+}
+
+ion-tab-bar ion-tab-button ion-icon{
+    color: lawngreen;
 }
