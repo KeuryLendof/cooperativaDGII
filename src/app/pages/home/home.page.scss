@@ -1,82 +1,79 @@
-.contenedor{
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    
-}
-
-.contenedor img{
-    opacity: 0.4;
-    filter: alpha(opacity=40);
-}
-
-.centrado{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: dodgerblue;
-    font-size: 20px;
-    font-weight: 800;
-}
-
-.centrado span{
-    color: lawngreen;
-}
-
-.centrado2{
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: lawngreen;
-}
-
-.centrado3{
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 85%;
-    margin: 0 auto;
-}
-.centrado3 .drowlist{
-    border-radius: 30px;
-    border: none;
-}
-
-ion-fab{
-    color: lawngreen;
-}
-
-ion-fab ion-icon{
-    width: 25px;
-    height: 25px;
-}
-
-ion-item ion-icon{
-    color: lawngreen;
-}
-
-ion-item .titulos{
-    margin-left: 3px;
-    font-size: 20px;
-    font-weight: 800;
-    color: lawngreen;
-}
-ion-item .subtitulos{
-    color: lawngreen;
-}
-
-ion-item .subtitulos .subsubtitulos{
-    color: #fff;
-}
-
-ion-item .balanceDisponible{
-    text-align: right;
-    // position: relative;
-}
-
-ion-tab-bar ion-tab-button ion-icon{
-    color: lawngreen;
-}
+ion-header {
+    background: transparent;
+    ion-item {
+      --background: transparent;
+      ion-avatar {
+        background: white;
+      }
+    }
+  }
+  
+  ion-content {
+    * {
+      font-family: lato;
+    }
+  
+    .main-header {
+      height: 40vh;
+      width: 150%;
+      background: linear-gradient(90deg, var(--ion-color-verde-tint) 10%, var(--ion-color-verde) 100%);
+      box-shadow: 0 1px 10px var(--ion-color-light);
+      border-radius: 0 0 50% 50%;
+      margin-left: -14vh;
+      margin-top: -65px;
+      img{
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        border-radius: 0 0 50% 50%;
+        margin-top: -60px;
+      }
+    }
+    ion-grid {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(10vh);
+      padding-bottom: 8vh;
+      ion-row {
+        ion-list{
+          text-align: center;
+          margin: 0 auto;
+          margin-top: 18px;
+          margin-bottom: 23px;
+          width: 95%;
+          ion-item{
+            border-radius: 30px;
+            border: none;
+          }
+        }
+      }
+      ion-list {
+        background: transparent;
+        ion-list-header{
+          ion-label{
+            color: var(--ion-color-verde);
+          }
+        }
+        
+        ion-item {
+          width: 95%;
+          margin: auto;
+          border-radius: 5px;
+          margin-bottom: 2vh;
+          b{
+            color: var(--ion-color-verde);
+          }
+          p {
+            font-size: 0.65rem;
+          }
+          ion-icon{
+            color: var(--ion-color-verde);
+          }
+          ion-text {
+            font-size: 0.90rem;
+          }
+        }
+      }
+    }
+  }
