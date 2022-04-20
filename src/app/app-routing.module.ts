@@ -21,6 +21,14 @@ const routes: Routes = [
   },  {
     path: 'contacto',
     loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
+  },
+  {
+    path: 'noticia',
+    loadChildren: () => import('./pages/noticias/noticia/noticia.module').then( m => m.NoticiaPageModule)
+  },
+  {
+    path: 'infonoticia',
+    loadChildren: () => import('./pages/noticias/infonoticia/infonoticia.module').then( m => m.InfonoticiaPageModule)
   }
 
 

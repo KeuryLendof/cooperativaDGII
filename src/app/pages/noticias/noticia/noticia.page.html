@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Noticias</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- fullscreen class="ion-padding" -->
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-list-header>Noticias Recientes</ion-list-header>
+
+    <ion-item detail [routerLink]="['/infonoticia']">
+      <ion-avatar slot="start">
+        <img src="https://coopdgii.com/wp-content/uploads/2022/02/Patria-1024x1024.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <h2>Celebra con nosotros el mes de la Patria</h2>
+        <!-- <h3>I'm a big deal</h3> -->
+        <p>Fecha: 17 de febrero de 2022</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
