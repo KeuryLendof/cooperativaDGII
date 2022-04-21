@@ -47,15 +47,32 @@ ion-item .titulos {
     margin-left: 3px;
     font-size: 20px;
     font-weight: 800;
-    color: lawngreen;
 }
 
-ion-item .subtitulos .subsubtitulos {
+ion-item .subtitulos {
     color: #fff;
+    margin-left: 3px;
 }
 
 .Icon-Service {
     justify-content: center;
     margin: block;
     align-items: center;
+}
+
+ion-avatar {
+    width: 120px;
+    height: auto;
+}
+
+.carticon {
+    font-size: 2rem;
+}
+
+.Nombre-Usuario {
+    font-size: 20px;
+}
+
+.Cargo-Usuario {
+    font-size: 16px;
 }
