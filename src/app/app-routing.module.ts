@@ -41,6 +41,14 @@ const routes: Routes = [
   },  {
     path: 'videos',
     loadChildren: () => import('./pages/videos/videos.module').then( m => m.VideosPageModule)
+  },
+  {
+    path: 'infosugerencia',
+    loadChildren: () => import('./pages/sugerencias/infosugerencia/infosugerencia.module').then( m => m.InfosugerenciaPageModule)
+  },
+  {
+    path: 'formsugerencia',
+    loadChildren: () => import('./pages/sugerencias/formsugerencia/formsugerencia.module').then( m => m.FormsugerenciaPageModule)
   }
 
 
