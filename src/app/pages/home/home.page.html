@@ -1,119 +1,98 @@
+<ion-header class="ion-no-border">
+  <ion-item lines="none">
+    <ion-button fill="clear" slot="start" color="light">
+      <ion-icon slot="icon-only" name="menu"></ion-icon>
+    </ion-button>
 
-<ion-content [fullscreen]="true">
+    <ion-button fill="clear" slot="end" color="light">
+      <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+    </ion-button>
 
-  <div class="contenedor">
-    <img src="../../../assets/img/adawel2.jpg"/>
-    <div class="centrado">Hola <span>Adawel</span></div>
-    <div class="centrado2">Ultima conexion: 10/08/2021 4:01:30 pm</div>
-    <div class="centrado3">
-      <ion-item class="drowlist">
-        <ion-label>Mostrar: Todos mis productos</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
+  </ion-item>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+
+  <div class="main-header"><img src="../../../assets/img/adawel2.jpg" /></div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-list>
+        <ion-chip>
+          <ion-avatar>
+            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          </ion-avatar>
+          <ion-label>Amadis Biloglow</ion-label>
+        </ion-chip>
+        <br><br>
+        <ion-text>Ultima conexion: 20/04/22 9:56:33am</ion-text>
+        <br><br>
+        <ion-item>
+          <ion-label>Mostrar:</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="f">Todos mis productos</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <br>
+      </ion-list>
+    </ion-row>
+
+    <ion-list>
+      <ion-list-header>
+        <ion-label>CUENTAS</ion-label>
+      </ion-list-header>
+      <ion-item lines="none">
+        <ion-icon slot="start" name='card-outline'></ion-icon>
+        <ion-label size="large" class="ion-text-wrap">
+          <b>Cuenta Aportaciones</b>
+          <p>
+            10000103038
+          </p>
+        </ion-label>
+        <ion-text slot="end">350,000Dop</ion-text>
       </ion-item>
-    </div>
-  </div>
 
-  <ion-fab vertical="top" horizontal="start" slot="fixed">
-    <ion-menu-button></ion-menu-button>
-  </ion-fab>
+      <ion-list-header>
+        <ion-label>INVERSION</ion-label>
+      </ion-list-header>
+      <ion-item lines="none">
+        <ion-icon slot="start" name='cash-outline'></ion-icon>
+        <ion-label size="large" class="ion-text-wrap">
+          <b>Certificado Financiero</b>
+          <p>
+            10000103038
+          </p>
+        </ion-label>
+        <ion-text slot="end">150,000Dop</ion-text>
+      </ion-item>
 
-  <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-icon name="notifications-outline"></ion-icon>
-  </ion-fab>
-  
-  <br>
-
-  <!-- <ion-item>
-    <ion-label>Hair Color</ion-label>
-    <ion-select value="brown" okText="Okay" cancelText="Dismiss">
-      <ion-select-option value="brown">Brown</ion-select-option>
-      <ion-select-option value="blonde">Blonde</ion-select-option>
-      <ion-select-option value="black">Black</ion-select-option>
-      <ion-select-option value="red">Red</ion-select-option>
-    </ion-select>
-  </ion-item> -->
-
-  <!-- <ion-item>
-    <ion-label>Toggle</ion-label>
-    <ion-toggle slot="end"></ion-toggle>
-  </ion-item> -->
-  <div class="ion-padding ion-text-center">
-
-    <ion-item>
-      <ion-icon name="card-outline"></ion-icon>
-      <ion-label class="titulos">Cuentas</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label class="subtitulos">Cuenta Aportaciones
-        <ion-input class="subsubtitulos" value="100000103038" readonly></ion-input>
-      </ion-label>
-      
-      <ion-label class="balanceDisponible">Balance disponible
-        <ion-input value="350,00DOP" readonly></ion-input>
-      </ion-label>
-      
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-icon name="cash-outline"></ion-icon>
-      <ion-label class="titulos">Inversion</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label class="subtitulos">Certificado Financiero
-        <ion-input class="subsubtitulos" value="100000103038" readonly></ion-input>
-      </ion-label>
-      
-      <ion-label class="balanceDisponible">Balance disponible
-        <ion-input value="150,00DOP" readonly></ion-input>
-      </ion-label>
-      
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-icon name="server-outline"></ion-icon>
-      <ion-label class="titulos">Prestamos</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label class="subtitulos">Prestamo Normal
-        <ion-input class="subsubtitulos" value="100000103038" readonly></ion-input>
-      </ion-label>
-      
-      <ion-label class="balanceDisponible">Balance disponible
-        <ion-input value="250,00DOP" readonly></ion-input>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label class="subtitulos">Prestamo Gerencial
-        <ion-input class="subsubtitulos" value="100000103038" readonly></ion-input>
-      </ion-label>
-      <ion-label class="balanceDisponible">Balance disponible
-        <ion-input value="150,00DOP" readonly></ion-input>
-      </ion-label>
-    </ion-item>
-
-  </div>
-
+      <ion-list-header>
+        <ion-label>PRESTAMOS</ion-label>
+      </ion-list-header>
+      <ion-item lines="none">
+        <ion-icon slot="start" name='server-outline'></ion-icon>
+        <ion-label size="large" class="ion-text-wrap">
+          <b>Prestamo Normal</b>
+          <p>
+            10000103038
+          </p>
+        </ion-label>
+        <ion-text slot="end">100,000Dop</ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon slot="start" name='server-outline'></ion-icon>
+        <ion-label size="large" class="ion-text-wrap">
+          <b>Prestamo Gerencial</b>
+          <p>
+            10000103038
+          </p>
+        </ion-label>
+        <ion-text slot="end">50,000Dop</ion-text>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+  <!-- <app-tab></app-tab> -->
 </ion-content>
 
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-
-    <ion-tab-button tab="solicitud">
-      <ion-icon name="receipt-outline"></ion-icon>
-      <ion-label>Solicitud</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="contacto">
-      <ion-icon name="call-outline"></ion-icon>
-      <ion-label>Contacto</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="Whatsapp">
-      <ion-icon name="logo-whatsapp"></ion-icon>
-      <ion-label>Whatsapp</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+<!-- <app-tab></app-tab> -->
