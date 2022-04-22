@@ -12,7 +12,7 @@ export class AppComponent {
     // { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
     // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
-    { title: 'Cuentas', url: '/cuenta', icon: 'wallet' },
+    { title: 'Cuentas', url: '/home', icon: 'wallet' },
     { title: 'Prestamos', url: '/prestamos', icon: 'cash' },
     { title: 'Inversiones', url: '/inversion', icon: 'pie-chart' },//por verificar o ese o diamond
     { title: 'Solicitudes', url: '/solicitud', icon: 'receipt' },
