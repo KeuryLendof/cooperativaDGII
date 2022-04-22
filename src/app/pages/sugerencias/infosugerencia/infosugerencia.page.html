@@ -1,0 +1,24 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>infosugerencia</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-padding ion-text-center" [fullscreen]="true">
+  <div class="img-sugerencia">
+    <ion-img src="../../assets/img/sugerencia.png"></ion-img>
+  </div>
+  <ion-text color="verde">
+    <h1>Guía De Uso Del Buzón Sugerencias</h1>
+  </ion-text>
+  <ion-text color="dark">
+    <h5>La presente guía tiene como objetivo establecer los pasos generales para el uso correcto
+      del Buzón sugerencia a fin de que puedas canalizar tus inquietudes, sugerencias y denuncias.</h5>
+  </ion-text>
+  <!-- <ion-button size="large" vertical="bottom" horizontal="end">CONTINUAR</ion-button> -->
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="verde" [routerLink]="['/formsugerencia']">
+      <ion-icon name="arrow-forward"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,6 +1,9 @@
 <ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
@@ -8,31 +11,32 @@
 
 <ion-content class="ion-padding ion-text-center" [fullscreen]="true">
 
+  <!-- <ion-card>
+    <ion-img src="../../assets/img/Logo-copdgi.png"></ion-img>
+  </ion-card> -->
+
   <div class="logo-login">
     <ion-img src="../../assets/img/Logo-copdgi.png"></ion-img>
   </div>
 
   <form action="" class="form">
+
     <ion-list lines="none">
+
       <ion-item>
-        <ion-icon name="person-outline"></ion-icon>
+        <ion-icon name="id-card-outline"></ion-icon>
         <ion-input name="user" type="number" placeholder="Cédula"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-icon name="key-outline"></ion-icon>
-        <ion-input name="pass" type="password" placeholder="Contraseña"></ion-input>
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-input name="user" type="email" placeholder="Correo Electronico"></ion-input>
       </ion-item>
+
     </ion-list>
 
-    <ion-button expand="block" type="submit" color="verde">INICIAR SESIÓN</ion-button>
-
-    <ion-button expand="block" fill="outline" class="btn-log" color="azul" [routerLink]="['/recuperar']">¿Problemas
-      Para Iniciar Sesión?
-    </ion-button>
+    <ion-button expand="block" type="submit" color="verde">RECUPERAR</ion-button>
 
   </form>
-
-  <!-- <ion-button expand="block" fill="outline">Outline + Block</ion-button> -->
 
 </ion-content>
