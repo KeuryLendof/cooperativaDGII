@@ -41,6 +41,10 @@ const routes: Routes = [
   },  {
     path: 'videos',
     loadChildren: () => import('./pages/videos/videos.module').then( m => m.VideosPageModule)
+  },
+  {
+    path: 'solicitar',
+    loadChildren: () => import('./pages/solicitudes/solicitar/solicitar.module').then( m => m.SolicitarPageModule)
   }
 
 

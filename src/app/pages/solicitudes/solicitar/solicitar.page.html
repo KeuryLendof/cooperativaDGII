@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>solicitar</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-list>
+        <ion-item>
+            <ion-label>Tipo de Solicitud</ion-label>
+
+            <ion-select [compareWith]="compareWith">
+                <ion-select-option *ngFor="let user of users" [value]="user">{{user.TipoDeSolicitud}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Codigo</ion-label>
+            <ion-select [compareWith]="compareWith">
+                <ion-select-option *ngFor="let user of users" [value]="user">{{user.Codigo}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-text>Extraer Todo el Listado</ion-text>
+            <ion-checkbox color="primary" slot="start"></ion-checkbox>
+            <ion-button slot="end" color="secondary" style="margin-top: 10px;">Buscar</ion-button>
+        </ion-item>
+    </ion-list>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label slot="start">Solicitud</ion-label>
+                    <ion-card-subtitle slot="end">Solicitud Préstamo Gerencial</ion-card-subtitle>
+                </ion-item>
+                <ion-item>
+                    <ion-label slot="start">Codigo</ion-label>
+                    <ion-card-subtitle slot="end">2323233</ion-card-subtitle>
+                </ion-item>
+                <ion-item>
+                    <ion-label slot="start">Solicitud</ion-label>
+                    <ion-card-subtitle slot="end">Solicitud Préstamo Gerencial</ion-card-subtitle>
+                </ion-item>
+                <ion-item>
+                    <ion-label slot="start">Fecha</ion-label>
+                    <ion-card-subtitle slot="end">-- / -- / ----</ion-card-subtitle>
+                </ion-item>
+                <ion-item>
+                    <ion-label slot="start">Comentario</ion-label>
+                    <ion-card-subtitle slot="end">La Rosa De Guadalupe</ion-card-subtitle>
+                </ion-item>
+                <ion-item>
+                    <ion-label slot="start">Estado</ion-label>
+                    <ion-card-subtitle slot="end">Pediente</ion-card-subtitle>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
