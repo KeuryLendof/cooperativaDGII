@@ -38,13 +38,30 @@ const routes: Routes = [
   {
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
-  },  {
+  },
+  {
     path: 'videos',
     loadChildren: () => import('./pages/videos/videos.module').then( m => m.VideosPageModule)
   },
   {
     path: 'solicitar',
     loadChildren: () => import('./pages/solicitudes/solicitar/solicitar.module').then( m => m.SolicitarPageModule)
+  },
+  {
+    path: 'infosugerencia',
+    loadChildren: () => import('./pages/sugerencias/infosugerencia/infosugerencia.module').then( m => m.InfosugerenciaPageModule)
+  },
+  {
+    path: 'infonoticia',
+    loadChildren: () => import('./pages/noticias/infonoticia/infonoticia.module').then( m => m.InfonoticiaPageModule)
+  },
+  {
+    path: 'cuenta',
+    loadChildren: () => import('./pages/productos/cuenta/cuenta.module').then( m => m.CuentaPageModule)
+  },
+  {
+    path: 'prestamo',
+    loadChildren: () => import('./pages/productos/prestamo/prestamo.module').then( m => m.PrestamoPageModule)
   }
 
 
@@ -58,3 +75,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+
