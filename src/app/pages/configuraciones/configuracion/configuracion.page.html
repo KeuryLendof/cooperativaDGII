@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Configuración</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Configuración</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item detail lines="none" [routerLink]="['/perfil']">
+    <ion-avatar slot="start">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+    </ion-avatar>
+    <ion-label>
+      <h1>Amadis Bilow</h1>
+      <p>Cambiar Contraseña y más</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-list-header>Atención al cliente</ion-list-header>
+
+  <ion-item detail lines="none" [routerLink]="['/preguntas']">
+    <ion-icon slot="start" name="list"></ion-icon>
+    <ion-label>Preguntas Frecuentes</ion-label>
+  </ion-item>
+
+  <ion-list-header>Aplicación</ion-list-header>
+
+  <ion-item lines="none">
+    <ion-icon slot="start" name="moon"></ion-icon>
+    <ion-label>Modo Oscuro</ion-label>
+    <ion-toggle slot="end" name="kiwi" color="success" checked></ion-toggle>
+  </ion-item>
+
+</ion-content>
+
+<ion-footer class="ion-no-border" collapse="fade">
+  <ion-toolbar class="ion-text-center">
+    <ion-button color="verde" fill="outline">
+      <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="verde" fill="outline">
+      <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="verde" fill="outline">
+      <ion-icon slot="icon-only" name="qr-code-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+<!-- <ion-footer class="ion-no-border" collapse="fade" class="ion-text-center">
+  <ion-toolbar>
+    <ion-label>
+      Recomendar
+    </ion-label>
+    <ion-label>
+      Salir
+    </ion-label>
+    <ion-label>
+      QR
+    </ion-label>
+  </ion-toolbar>
+</ion-footer> -->

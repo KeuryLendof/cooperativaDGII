@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/configuracion"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-avatar class="img-usuario">
+    <img class="img-user" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+  </ion-avatar>
+
+  <ion-text class="ion-text-center">
+    <h1>
+      Amadis Bilow
+    </h1>
+  </ion-text>
+
+  <!-- <ion-list-header>Cambiar Contraseña</ion-list-header> -->
+
+  <ion-text>
+    <h2>
+      Cambiar Contraseña
+    </h2>
+  </ion-text>
+
+  <ion-item>
+    <ion-label position="floating">Contraseña Anterior</ion-label>
+    <ion-input type="password" clearInput name="oldPass"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Nueva Contraseña</ion-label>
+    <ion-input type="password" clearInput name="newPass"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Confirmar Contraseña</ion-label>
+    <ion-input type="password" clearInput name="samePass"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" type="submit" color="verde" class="btn-change">CAMBIAR CONTRASEÑA</ion-button>
+  <ion-button expand="block" fill="outline" color="azul">DESCARTAR</ion-button>
+
+</ion-content>

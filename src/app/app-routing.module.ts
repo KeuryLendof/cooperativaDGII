@@ -74,7 +74,16 @@ const routes: Routes = [
   {
     path: 'infopregunta',
     loadChildren: () => import('./pages/ayuda/infopregunta/infopregunta.module').then( m => m.InfopreguntaPageModule)
+  },
+  {
+    path: 'configuracion',
+    loadChildren: () => import('./pages/configuraciones/configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/configuraciones/perfil/perfil.module').then( m => m.PerfilPageModule)
   }
+
 ];
 
 @NgModule({
