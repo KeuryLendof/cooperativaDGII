@@ -6,36 +6,60 @@ ion-header {
         background: white;
       }
     }
-  }
+}
   
   ion-content {
     * {
-      font-family: lato;
+      // font-family: lato;
     }
-  
-    .main-header {
-      height: 40vh;
-      width: 150%;
-      background: linear-gradient(90deg, var(--ion-color-verde-tint) 10%, var(--ion-color-verde) 100%);
-      box-shadow: 0 1px 10px var(--ion-color-light);
-      border-radius: 0 0 50% 50%;
-      margin-left: -14vh;
-      margin-top: -65px;
-      img{
-        opacity: 0.4;
-        filter: alpha(opacity=40);
-        border-radius: 0 0 50% 50%;
-        margin-top: -60px;
-      }
-    }
+
     ion-grid {
       width: 100%;
       position: absolute;
-      top: 0;
-      left: 0;
-      transform: translateY(10vh);
-      padding-bottom: 8vh;
       ion-row {
+        ion-card{
+          background: linear-gradient(90deg, var(--ion-color-verde-tint) 10%, var(--ion-color-verde) 100%);
+          box-shadow: 0 1px 10px var(--ion-color-light);
+          color:white;
+          height: 25vh;
+          width: 95%;
+          ion-text{
+            font-size: 30px;
+            font-weight: 800;
+          }
+          .ultimaConexion{
+            font-size: 15px;
+            font-weight: 300;
+          }
+        }
+        .opcionesP{
+          width: 95%;
+        }
+
+        .opciones{
+          height: 90%;
+          box-shadow: -1px 11px 13px -6px rgb(87, 86, 86);
+          border-radius: 10px !important;
+          margin: 10px 0;
+          ion-thumbnail {
+            width: 6vh;
+            height: 6vh;
+            border-radius: 20px;
+            img {
+              width: 4vh;
+              height: 4vh;
+              transform: translateY(50%);
+            }
+          }
+          ion-card-content {
+            text-align: center;
+            ion-label {
+              font-weight: bold;
+              text-shadow: 1px 1px 1px var(--ion-color-medium);
+              letter-spacing: 0.5px;
+            }
+          }
+        }
         ion-list{
           text-align: center;
           margin: 0 auto;

@@ -13,7 +13,7 @@ export class AppComponent {
     // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
     { title: 'Cuentas', url: '/cuenta', icon: 'wallet' },
-    { title: 'Prestamos', url: '/prestamo', icon: 'cash' },
+    { title: 'Prestamos', url: '/prestamos', icon: 'cash' },
     { title: 'Inversiones', url: '/inversion', icon: 'pie-chart' },//por verificar o ese o diamond
     { title: 'Solicitudes', url: '/solicitud', icon: 'receipt' },
     { title: 'Descuentos', url: '/descuentos', icon: 'calculator' },

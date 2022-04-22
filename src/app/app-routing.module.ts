@@ -18,7 +18,8 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },  {
+  },
+  {
     path: 'contacto',
     loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
   },
@@ -29,7 +30,16 @@ const routes: Routes = [
   {
     path: 'infonoticia',
     loadChildren: () => import('./pages/noticias/infonoticia/infonoticia.module').then( m => m.InfonoticiaPageModule)
+  },
+  {
+    path: 'cuenta',
+    loadChildren: () => import('./pages/productos/cuenta/cuenta.module').then( m => m.CuentaPageModule)
+  },
+  {
+    path: 'prestamo',
+    loadChildren: () => import('./pages/productos/prestamo/prestamo.module').then( m => m.PrestamoPageModule)
   }
+
 
 
 ];
