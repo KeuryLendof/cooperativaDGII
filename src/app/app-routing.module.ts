@@ -48,6 +48,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/sugerencias/infosugerencia/infosugerencia.module').then( m => m.InfosugerenciaPageModule)
   },
   {
+    path: 'formsugerencia',
+    loadChildren: () => import('./pages/sugerencias/formsugerencia/formsugerencia.module').then( m => m.FormsugerenciaPageModule)
+  },
+  {
     path: 'infonoticia',
     loadChildren: () => import('./pages/noticias/infonoticia/infonoticia.module').then( m => m.InfonoticiaPageModule)
   },
@@ -58,10 +62,19 @@ const routes: Routes = [
   {
     path: 'prestamo',
     loadChildren: () => import('./pages/productos/prestamo/prestamo.module').then( m => m.PrestamoPageModule)
+  },
+  {
+    path: 'ayuda',
+    loadChildren: () => import('./pages/ayuda/ayuda/ayuda.module').then( m => m.AyudaPageModule)
+  },
+  {
+    path: 'preguntas',
+    loadChildren: () => import('./pages/ayuda/preguntas/preguntas.module').then( m => m.PreguntasPageModule)
+  },
+  {
+    path: 'infopregunta',
+    loadChildren: () => import('./pages/ayuda/infopregunta/infopregunta.module').then( m => m.InfopreguntaPageModule)
   }
-
-
-
 ];
 
 @NgModule({
