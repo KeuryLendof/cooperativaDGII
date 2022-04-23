@@ -90,7 +90,15 @@ const routes: Routes = [
   {
     path: 'perfil',
     loadChildren: () => import('./pages/configuraciones/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },  {
+    path: 'solicitud',
+    loadChildren: () => import('./pages/solicitudes/solicitud/solicitud.module').then( m => m.SolicitudPageModule)
+  },
+  {
+    path: 'formcertificado',
+    loadChildren: () => import('./pages/inversiones/formcertificado/formcertificado.module').then( m => m.FormcertificadoPageModule)
   }
+
 
 ];
 
