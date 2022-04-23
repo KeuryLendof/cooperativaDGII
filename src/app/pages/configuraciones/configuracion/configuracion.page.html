@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button color="verde"></ion-menu-button>
     </ion-buttons>
     <ion-title>Configuración</ion-title>
   </ion-toolbar>
@@ -43,29 +43,47 @@
 </ion-content>
 
 <ion-footer class="ion-no-border" collapse="fade">
-  <ion-toolbar class="ion-text-center">
-    <ion-button color="verde" fill="outline">
-      <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
-    </ion-button>
-    <ion-button color="verde" fill="outline">
-      <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
-    </ion-button>
-    <ion-button color="verde" fill="outline">
-      <ion-icon slot="icon-only" name="qr-code-outline"></ion-icon>
-    </ion-button>
-  </ion-toolbar>
-</ion-footer>
 
-<!-- <ion-footer class="ion-no-border" collapse="fade" class="ion-text-center">
-  <ion-toolbar>
-    <ion-label>
-      Recomendar
-    </ion-label>
-    <ion-label>
-      Salir
-    </ion-label>
-    <ion-label>
-      QR
-    </ion-label>
+  <ion-toolbar class="ion-text-center">
+    <ion-grid>
+
+      <ion-row>
+        <ion-col>
+          <ion-button color="verde" fill="outline">
+            <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="verde" fill="outline">
+            <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="verde" fill="outline">
+            <ion-icon slot="icon-only" name="qr-code-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            Recomendar
+          </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label>
+            Salir
+          </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label>
+            QR
+          </ion-label>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
   </ion-toolbar>
-</ion-footer> -->
+
+</ion-footer>
