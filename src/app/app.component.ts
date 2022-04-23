@@ -13,7 +13,7 @@ export class AppComponent {
     // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
     { title: 'Cuentas', url: '/home', icon: 'wallet' },
-    { title: 'Prestamos', url: '/prestamos', icon: 'cash' },
+    { title: 'Prestamos', url: '/prestamo', icon: 'cash' },
     { title: 'Inversiones', url: '/inversion', icon: 'pie-chart' },//por verificar o ese o diamond
     { title: 'Solicitudes', url: '/solicitud', icon: 'receipt' },
     { title: 'Descuentos', url: '/descuentos', icon: 'calculator' },
@@ -24,7 +24,7 @@ export class AppComponent {
     { title: 'Videos', url: '/videos', icon: 'film' },
     { title: 'Contactos', url: '/contacto', icon: 'mail' },
     { title: 'Configuración', url: '/configuracion', icon: 'cog' },
-    { title: 'Cerrar Sesión', url: '/close', icon: 'log-out' },
+    { title: 'Cerrar Sesión', url: '/login', icon: 'log-out' },
   ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}

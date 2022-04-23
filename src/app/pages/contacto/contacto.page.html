@@ -1,231 +1,237 @@
-<ion-content [fullscreen]="true">
-    <div class="contenedor">
-        <img src="../../../assets/img/adawel2.jpg" />
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Contactos</ion-title>
+    </ion-toolbar>
+</ion-header>
 
-    </div>
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
 
-    <ion-fab vertical="top" horizontal="start" slot="fixed">
-        <ion-menu-button></ion-menu-button>
-    </ion-fab>
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Contactos</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-    <ion-fab vertical="top" horizontal="end" slot="fixed">
-        <ion-icon name="notifications-outline"></ion-icon>
-    </ion-fab>
+    <ion-list>
+        <!--    Personal_Servicio   -->
+        <!--Persona(1)-->
+        <ion-list-header>Nuestros Oficiales Del Área De Servicio</ion-list-header>
 
-    <br>
+        <ion-item>
+            <ion-label class="titulos" color="verde">Atencion al Usuario</ion-label>
+        </ion-item>
 
-    <div class="ion-padding ion-text-center">
-        <ion-card-title><b>Nuestros Oficiales Del Área De Servicio</b><br>
-            <h6>Cuantos de ustedes han solicitado servicios en línea? </h6>
-        </ion-card-title>
+        <ion-item>
+            <ion-avatar slot="start">
+                <img src="https://coopdgii.com/wp-content/uploads/2021/10/Suelin.jpg" />
+                <br>
+                <ion-text class="Nombre-Usuario" color="azul">
+                    <b>Suelin Pimentel</b>
+                </ion-text>
+                <ion-text class="Cargo-Usuario">
+                    Encargada de Area de Servicio
+                </ion-text>
+            </ion-avatar>
+            <ion-card-content>
+                <ion-text class="Cargo-Usuario" color="amarillo">
+                    Nuestra área de servicio siempre innovando para mantener informado a todos socios.
+                </ion-text>
+            </ion-card-content>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-label class="subtitulos">809-287-2386</ion-label>
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-label class="subtitulos">supimentel@dgii.gov.do</ion-label>
+        </ion-item>
         <br>
-        <ion-list>
-            <!--    Personal_Servicio   -->
-            <!--Persona(1)-->
-            <ion-item>
 
-                <ion-label class="titulos" color="verde">Atencion al Usuario</ion-label>
-            </ion-item>
-            <ion-item>
-                <ion-avatar slot="start">
-                    <img src="../../../assets/img/Suelin-pimentel.jpg" />
-                    <br>
-                    <ion-text class="Nombre-Usuario" color="azul">
-                        <b>Suelin Pimentel</b>
-                    </ion-text>
-                    <ion-text class="Cargo-Usuario">
-                        Encargada de Area de Servicio
-                    </ion-text>
-                </ion-avatar>
-                <ion-card-content>
-                    <ion-text class="Cargo-Usuario" color="amarillo">
-                        Nuestra área de servicio siempre innovando para mantener informado a todos socios.
-                    </ion-text>
-                </ion-card-content>
-            </ion-item>
-            <ion-item>
-                <ion-icon name="call-outline"></ion-icon>
-                <ion-label class="subtitulos">809-287-2386</ion-label>
+        <!--Persona(2)-->
+        <ion-item>
+            <ion-avatar slot="start">
+                <img src="https://coopdgii.com/wp-content/uploads/2021/10/Maria-Es.jpg" />
+                <br>
+                <ion-text class="Nombre-Usuario" color="azul">
+                    <b>Maria Escolastico</b>
+                </ion-text>
+                <ion-text class="Cargo-Usuario">
+                    Oficial de Servicio
+                </ion-text>
+            </ion-avatar>
+            <ion-card-content>
+                <ion-text class="Cargo-Usuario" color="amarillo">
+                    Nuestra área de servicio siempre innovando para mantener informado a todos socios.
+                </ion-text>
+            </ion-card-content>
+        </ion-item>
 
-                <ion-icon name="mail-outline"></ion-icon>
-                <ion-label class="subtitulos">supimentel@dgii.gov.do</ion-label>
-            </ion-item>
-            <br>
+        <ion-item>
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-label class="subtitulos"> 809-287-2873</ion-label>
 
-            <!--Persona(2)-->
-            <ion-item>
-                <ion-avatar slot="start">
-                    <img src="../../../assets/img/Maria-Escolastico.jpg" />
-                    <br>
-                    <ion-text class="Nombre-Usuario" color="azul">
-                        <b>Maria Escolastico</b>
-                    </ion-text>
-                    <ion-text class="Cargo-Usuario">
-                        Oficial de Servicio
-                    </ion-text>
-                </ion-avatar>
-                <ion-card-content>
-                    <ion-text class="Cargo-Usuario" color="amarillo">
-                        Nuestra área de servicio siempre innovando para mantener informado a todos socios.
-                    </ion-text>
-                </ion-card-content>
-            </ion-item>
-            <ion-item>
-                <ion-icon name="call-outline"></ion-icon>
-                <ion-label class="subtitulos"> 809-287-2873</ion-label>
-
-                <ion-icon name="mail-outline"></ion-icon>
-                <ion-label class="subtitulos"> mescolastico@dgii.gov.do</ion-label>
-            </ion-item>
-            <br>
-            <!--Persona(3)-->
-            <ion-item>
-                <ion-avatar slot="start">
-                    <img src="../../../assets/img/Yohanny-Duarte.jpg" />
-                    <br>
-                    <ion-text class="Nombre-Usuario" color="azul">
-                        <b>Yohanny Duarte</b>
-                    </ion-text>
-                    <br>
-                    <ion-text class="Cargo-Usuario">
-                        Oficial de Servicio
-                    </ion-text>
-                </ion-avatar>
-                <ion-card-content>
-                    <ion-text class="Cargo-Usuario" color="amarillo">
-                        Nuestra área de servicio siempre innovando para mantener informado a todos socios.
-                    </ion-text>
-                </ion-card-content>
-            </ion-item>
-            <ion-item>
-                <ion-icon name="call-outline"></ion-icon>
-                <ion-label class="subtitulos">809-287-2875</ion-label>
-
-                <ion-icon name="mail-outline"></ion-icon>
-                <ion-label class="subtitulos">yduarte@dgii.gov.do</ion-label>
-            </ion-item>
-            <br>
-            <!--Persona(4)-->
-            <ion-item>
-                <ion-avatar slot="start">
-                    <img src="../../../assets/img/Anny-Rodriguez.jpg" />
-                    <br>
-                    <ion-text class="Nombre-Usuario" color="azul">
-                        <b>Anny Rodriguez</b>
-                    </ion-text>
-                    <ion-text class="Cargo-Usuario">
-                        Oficial de Servicio
-                    </ion-text>
-                </ion-avatar>
-
-                <ion-card-content>
-                    <ion-text class="Cargo-Usuario" color="amarillo">
-                        Nuestra área de servicio siempre innovando para mantener informado a todos socios.
-                    </ion-text>
-                </ion-card-content>
-            </ion-item>
-            <ion-item>
-                <ion-icon name="call-outline"></ion-icon>
-                <ion-label class="subtitulos">809-287-2833</ion-label>
-
-                <ion-icon name="mail-outline"></ion-icon>
-                <ion-label class="subtitulos">annrodrigu@dgii.gov.do</ion-label>
-            </ion-item>
-            <br>
-            <!--Persona(5)-->
-            <ion-item>
-                <ion-avatar slot="start">
-                    <img src="../../../assets/img/Yulitza-Nuñez.jpg" />
-                    <br>
-                    <ion-text class="Nombre-Usuario" color="azul">
-                        <b>Yulitza Nuñez</b>
-                    </ion-text>
-                    <br>
-                    <ion-text class="Cargo-Usuario">
-                        Oficial de Servicio
-                    </ion-text>
-                </ion-avatar>
-                <ion-card-content>
-                    <ion-text class="Cargo-Usuario" color="amarillo">
-                        Nuestra área de servicio siempre innovando para mantener informado a todos socios.
-                    </ion-text>
-                </ion-card-content>
-            </ion-item>
-            <ion-item>
-                <ion-icon name="call-outline"></ion-icon>
-                <ion-label class="subtitulos">809-287-2833</ion-label>
-
-                <ion-icon name="mail-outline"></ion-icon>
-                <ion-label class="subtitulos">ymnunezb@dgii.gov.do</ion-label>
-            </ion-item>
-            <!--    /Personal_Servicio  -->
-        </ion-list>
-
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-label class="subtitulos"> mescolastico@dgii.gov.do</ion-label>
+        </ion-item>
         <br>
-        <ion-list>
-            <!--Telefonos-->
-            <ion-item>
 
-                <ion-label class="titulos" color="verde">Telefonos</ion-label>
-            </ion-item>
-            <ion-item>
-                <ion-icon name="logo-whatsapp"></ion-icon>
-                <ion-label class="subtitulos">(849) 451-0798</ion-label>
+        <!--Persona(3)-->
+        <ion-item>
+            <ion-avatar slot="start">
+                <img src="https://coopdgii.com/wp-content/uploads/2021/10/MicrosoftTeams-image-4.jpg" />
+                <br>
+                <ion-text class="Nombre-Usuario" color="azul">
+                    <b>Yohanny Duarte</b>
+                </ion-text>
+                <br>
+                <ion-text class="Cargo-Usuario">
+                    Oficial de Servicio
+                </ion-text>
+            </ion-avatar>
+            <ion-card-content>
+                <ion-text class="Cargo-Usuario" color="amarillo">
+                    Nuestra área de servicio siempre innovando para mantener informado a todos socios.
+                </ion-text>
+            </ion-card-content>
+        </ion-item>
 
-                <ion-icon name="call-outline"></ion-icon>
-                <ion-label class="subtitulos">(809) 287-2700</ion-label>
-            </ion-item>
-        </ion-list>
+        <ion-item>
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-label class="subtitulos">809-287-2875</ion-label>
+
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-label class="subtitulos">yduarte@dgii.gov.do</ion-label>
+        </ion-item>
         <br>
-        <ion-list>
-            <!--Redes Sociales-->
-            <ion-item>
-                <ion-label class="titulos" color="verde">Redes Sociales</ion-label>
-            </ion-item>
-            <ion-item>
-                <ion-label class="subtitulos">
-                    <div class="carticon">
-                        <ion-router-link color="#" href="https://www.facebook.com/coopdgii">
-                            <ion-icon class="Icon-Service" name="logo-facebook"></ion-icon>
-                        </ion-router-link>
-                    </div>
-                </ion-label>
-                <ion-label class="subtitulos">
-                    <div class="carticon">
-                        <ion-router-link color="#"
-                            href="https://www.youtube.com/channel/UCVkAUVlHsArx1Y1u3ihZa2A/featured">
-                            <ion-icon class="Icon-Service" name="logo-youtube"></ion-icon>
-                        </ion-router-link>
-                    </div>
-                </ion-label>
-                <ion-label class="subtitulos">
-                    <div class="carticon">
-                        <ion-router-link color="#" href="https://twitter.com/coopdgii">
-                            <ion-icon name="logo-twitter" aria-label="Twitter icon"></ion-icon>
-                        </ion-router-link>
-                    </div>
-                </ion-label>
-                <ion-label class="subtitulos">
-                    <div class="carticon">
-                        <ion-icon name="mail-outline"></ion-icon>
-                    </div>
-                    <ion-label class="subtitulos">info@coopdgii.com</ion-label>
-                </ion-label>
 
-            </ion-item>
-        </ion-list>
+        <!--Persona(4)-->
+        <ion-item>
+            <ion-avatar slot="start">
+                <img src="https://coopdgii.com/wp-content/uploads/2021/10/MicrosoftTeams-image-6.jpg" />
+                <br>
+                <ion-text class="Nombre-Usuario" color="azul">
+                    <b>Anny Rodriguez</b>
+                </ion-text>
+                <ion-text class="Cargo-Usuario">
+                    Oficial de Servicio
+                </ion-text>
+            </ion-avatar>
+
+            <ion-card-content>
+                <ion-text class="Cargo-Usuario" color="amarillo">
+                    Nuestra área de servicio siempre innovando para mantener informado a todos socios.
+                </ion-text>
+            </ion-card-content>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-label class="subtitulos">809-287-2833</ion-label>
+
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-label class="subtitulos">annrodrigu@dgii.gov.do</ion-label>
+        </ion-item>
         <br>
-        <ion-list>
-            <!--Localizacion-->
-            <ion-item>
-                <ion-label class="titulos" color="verde">Localización</ion-label>
-            </ion-item>
-            <ion-item>
-                <ion-label class="subtitulos">
-                    <p>Av. Pedro Henríquez Ureña #29 Gazcue Santo Domingo República Dominicana</p>
-                </ion-label>
-            </ion-item>
-        </ion-list>
 
-    </div>
+        <!--Persona(5)-->
+        <ion-item>
+            <ion-avatar slot="start">
+                <img src="https://coopdgii.com/wp-content/uploads/2021/10/MicrosoftTeams-image-3.jpg" />
+                <br>
+                <ion-text class="Nombre-Usuario" color="azul">
+                    <b>Yulitza Nuñez</b>
+                </ion-text>
+                <br>
+                <ion-text class="Cargo-Usuario">
+                    Oficial de Servicio
+                </ion-text>
+            </ion-avatar>
+            <ion-card-content>
+                <ion-text class="Cargo-Usuario" color="amarillo">
+                    Nuestra área de servicio siempre innovando para mantener informado a todos socios.
+                </ion-text>
+            </ion-card-content>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-label class="subtitulos">809-287-2833</ion-label>
+
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-label class="subtitulos">ymnunezb@dgii.gov.do</ion-label>
+        </ion-item>
+
+        <!--    /Personal_Servicio  -->
+    </ion-list>
+
+    <ion-list>
+        <!--Telefonos-->
+        <ion-item>
+            <ion-label class="titulos" color="verde">Telefonos</ion-label>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="logo-whatsapp"></ion-icon>
+            <ion-label class="subtitulos">(849) 451-0798</ion-label>
+
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-label class="subtitulos">(809) 287-2700</ion-label>
+        </ion-item>
+
+    </ion-list>
+
+    <ion-list>
+        <!--Redes Sociales-->
+        <ion-item>
+            <ion-label class="titulos" color="verde">Redes Sociales</ion-label>
+        </ion-item>
+
+        <ion-item>
+            <ion-label class="subtitulos">
+                <div class="carticon">
+                    <ion-router-link color="#" href="https://www.facebook.com/coopdgii">
+                        <ion-icon class="Icon-Service" name="logo-facebook"></ion-icon>
+                    </ion-router-link>
+                </div>
+            </ion-label>
+            <ion-label class="subtitulos">
+                <div class="carticon">
+                    <ion-router-link color="#" href="https://www.youtube.com/channel/UCVkAUVlHsArx1Y1u3ihZa2A/featured">
+                        <ion-icon class="Icon-Service" name="logo-youtube"></ion-icon>
+                    </ion-router-link>
+                </div>
+            </ion-label>
+            <ion-label class="subtitulos">
+                <div class="carticon">
+                    <ion-router-link color="#" href="https://twitter.com/coopdgii">
+                        <ion-icon name="logo-twitter" aria-label="Twitter icon"></ion-icon>
+                    </ion-router-link>
+                </div>
+            </ion-label>
+            <ion-label class="subtitulos">
+                <div class="carticon">
+                    <ion-icon name="mail-outline"></ion-icon>
+                </div>
+                <ion-label class="subtitulos">info@coopdgii.com</ion-label>
+            </ion-label>
+
+        </ion-item>
+
+    </ion-list>
+
+    <ion-list>
+        <!--Localizacion-->
+        <ion-item>
+            <ion-label class="titulos" color="verde">Localización</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label class="subtitulos">
+                <p>Av. Pedro Henríquez Ureña #29 Gazcue Santo Domingo República Dominicana</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
 </ion-content>
