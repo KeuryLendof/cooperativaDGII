@@ -1,35 +1,81 @@
 <ion-header class="ion-no-border">
   
-  <!-- <ion-button fill="clear" color="dark">
-    <ion-menu-button></ion-menu-button>
-  </ion-button> -->
-  <ion-buttons>
-    <ion-back-button defaultHref="/home"></ion-back-button>
-  </ion-buttons>
+	<ion-item lines="none">
+
+		<ion-avatar defaultHref="/home" slot="start">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+			<ion-label>
+				<p>Hola,</p>
+				<h3>Amadis Bilow</h3>
+			</ion-label>
+    	<ion-avatar defaultHref="/home" slot="end">
+        <img src="../../../../assets/img/salida.png">
+      </ion-avatar>
+
+	</ion-item>
 
 </ion-header>
 
 <ion-content>
 
-  <ion-card>
+  <div class="slides ion-margin-bottom">
+    <ion-slides [options]="slidesOptions">
+      <ion-slide>
+        <ion-card>
+          <ion-card-header>
+            
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <!-- <ion-card-subtitle class="ion-margin-bottom cuenta">Cuenta aportaciones</ion-card-subtitle>
+            <ion-card-subtitle class="ion-margin-bottom">1000 0103 0388</ion-card-subtitle> right -->
+            <ion-card-title class="ion-margin-bottom ion-text-center saldoPrincipal">350,000Dop</ion-card-title>
+            <ion-card-subtitle class="ion-margin-top ion-text-center cuenta">Cuenta aportaciones</ion-card-subtitle>
+            <ion-card-subtitle class="ion-margin-top ion-text-center">1000 0103 0388 
+              <ion-icon name="copy-outline"></ion-icon>
+            </ion-card-subtitle>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
 
-    <ion-card-header>
-      
-      <ion-avatar>
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-      </ion-avatar>
-      <ion-label>
-        <h3>John Doe</h3>
-        <p>Dec 10, 2019</p>
-      </ion-label>
-      
-      
-    </ion-card-header>
+    </ion-slides>
+  </div>
 
-    <ion-card-content>
+  <div class="container">
 
-    </ion-card-content>
-    
-  </ion-card>
+    <h2>Historial</h2>
+
+    <ion-item lines="none">
+      <ion-label size="large" class="">
+          <b>Cobro IMP</b>
+          <p>
+            10000103038
+          </p>
+        </ion-label>
+        <ion-label slot="end" class="ion-text-wrap">
+          <b>21 de Abril 2022</b>
+          <p>
+            <ion-badge color="danger">-55.00</ion-badge>
+          </p>
+        </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label size="large" class="">
+          <b>Deposito</b>
+          <p>
+            10000103038
+          </p>
+        </ion-label>
+        <ion-label slot="end" size="large" class="ion-text-wrap">
+          <b>22 de Abril 2022</b>
+          <p>
+            <ion-badge color="primary">+5,000.00</ion-badge>
+          </p>
+        </ion-label>
+        
+    </ion-item>
+
+  </div>
 
 </ion-content>

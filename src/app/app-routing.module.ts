@@ -44,6 +44,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/videos/videos.module').then( m => m.VideosPageModule)
   },
   {
+    path: 'solicitar',
+    loadChildren: () => import('./pages/solicitudes/solicitar/solicitar.module').then( m => m.SolicitarPageModule)
+  },
+  {
     path: 'infosugerencia',
     loadChildren: () => import('./pages/sugerencias/infosugerencia/infosugerencia.module').then( m => m.InfosugerenciaPageModule)
   },
@@ -62,6 +66,10 @@ const routes: Routes = [
   {
     path: 'prestamo',
     loadChildren: () => import('./pages/productos/prestamo/prestamo.module').then( m => m.PrestamoPageModule)
+  },
+  {
+    path: 'descuento',
+    loadChildren: () => import('./pages/descuento/descuento.module').then( m => m.DescuentoPageModule)
   },
   {
     path: 'ayuda',
