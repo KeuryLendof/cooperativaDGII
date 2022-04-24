@@ -35,11 +35,11 @@
 
           <ion-row>
             <ion-col size="9">
-              <ion-text>Buenas Dias</ion-text>
+              <ion-text>{{mostrarSaludo(probando)}}</ion-text>
             </ion-col>
             <ion-col size="3">
               <ion-avatar>
-                <img src="../../../assets/img/sol.png">
+                <img [src]="mostrarSaludoImagen(probando)">
               </ion-avatar>
             </ion-col>
           </ion-row>
@@ -58,79 +58,90 @@
     </ion-row>
 
     
-    <ion-segment (ionChange)="segmentChanged($event)" color="verde" scrollable value="home">
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment" color="verde" scrollable>
 
-        <ion-segment-button value="home">
+        <ion-segment-button value="0" onclick="mostrarCuentas()">
           <ion-icon name="card-outline"></ion-icon>
           <ion-label>Cuentas</ion-label>
         </ion-segment-button>
 
-        <ion-segment-button value="cash">
+        <ion-segment-button value="1">
           <ion-icon name="cash-outline"></ion-icon>
           <ion-label>Prestamos</ion-label>
         </ion-segment-button>
 
-        <ion-segment-button value="server">
+        <ion-segment-button value="2">
           <ion-icon name="server-outline"></ion-icon>
           <ion-label>Inversion</ion-label>
         </ion-segment-button>
 
     </ion-segment>
+
+    <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true">  
+      <ion-slide>
+        <ion-list>
+          <!-- <ion-list-header>
+            <ion-label>CUENTAS</ion-label>
+          </ion-list-header> -->
+          <ion-item lines="none" detail [routerLink]="['/cuenta']">
+            <ion-icon slot="start" name='card-outline'></ion-icon>
+            <ion-label size="large" class="ion-text-wrap">
+              <b>Cuenta Aportaciones</b>
+              <p>
+                10000103038
+              </p>
+            </ion-label>
+            <ion-text slot="end">350,000Dop</ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-slide>  
+      <ion-slide>
+        <ion-list [style]="mostrarPrestamos(vista)">
+          <!-- <ion-list-header>
+            <ion-label>PRESTAMOS</ion-label>
+          </ion-list-header> -->
+          <ion-item lines="none" detail [routerLink]="['/prestamo']">
+            <ion-icon slot="start" name='server-outline'></ion-icon>
+            <ion-label size="large" class="ion-text-wrap">
+              <b>Prestamo Normal</b>
+              <p>
+                10000103038
+              </p>
+            </ion-label>
+            <ion-text slot="end">100,000Dop</ion-text>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-icon slot="start" name='server-outline'></ion-icon>
+            <ion-label size="large" class="ion-text-wrap">
+              <b>Prestamo Gerencial</b>
+              <p>
+                10000103038
+              </p>
+            </ion-label>
+            <ion-text slot="end">50,000Dop</ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-slide>  
+      <ion-slide>
+        <ion-list>
+          <!-- <ion-list-header>
+            <ion-label>INVERSION</ion-label>
+          </ion-list-header> -->
+          <ion-item lines="none">
+            <ion-icon slot="start" name='cash-outline'></ion-icon>
+            <ion-label size="large" class="ion-text-wrap">
+              <b>Certificado Financiero</b>
+              <p>
+                10000103038
+              </p>
+            </ion-label>
+            <ion-text slot="end">150,000Dop</ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-slide>  
+    </ion-slides>  
+      
     
-
-    <ion-list>
-      <ion-list-header>
-        <ion-label>CUENTAS</ion-label>
-      </ion-list-header>
-      <ion-item lines="none" detail [routerLink]="['/cuenta']">
-        <ion-icon slot="start" name='card-outline'></ion-icon>
-        <ion-label size="large" class="ion-text-wrap">
-          <b>Cuenta Aportaciones</b>
-          <p>
-            10000103038
-          </p>
-        </ion-label>
-        <ion-text slot="end">350,000Dop</ion-text>
-      </ion-item>
-
-      <ion-list-header>
-        <ion-label>INVERSION</ion-label>
-      </ion-list-header>
-      <ion-item lines="none">
-        <ion-icon slot="start" name='cash-outline'></ion-icon>
-        <ion-label size="large" class="ion-text-wrap">
-          <b>Certificado Financiero</b>
-          <p>
-            10000103038
-          </p>
-        </ion-label>
-        <ion-text slot="end">150,000Dop</ion-text>
-      </ion-item>
-
-      <ion-list-header>
-        <ion-label>PRESTAMOS</ion-label>
-      </ion-list-header>
-      <ion-item lines="none" detail [routerLink]="['/prestamo']">
-        <ion-icon slot="start" name='server-outline'></ion-icon>
-        <ion-label size="large" class="ion-text-wrap">
-          <b>Prestamo Normal</b>
-          <p>
-            10000103038
-          </p>
-        </ion-label>
-        <ion-text slot="end">100,000Dop</ion-text>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon slot="start" name='server-outline'></ion-icon>
-        <ion-label size="large" class="ion-text-wrap">
-          <b>Prestamo Gerencial</b>
-          <p>
-            10000103038
-          </p>
-        </ion-label>
-        <ion-text slot="end">50,000Dop</ion-text>
-      </ion-item>
-    </ion-list>
   </ion-grid>
   <!-- <app-tab></app-tab> -->
 </ion-content>
