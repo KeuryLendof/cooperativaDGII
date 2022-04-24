@@ -1,5 +1,5 @@
 export interface ISolicitudesTipo{
-    nombre: string,
-    tipo: string,
-    extra: string
+    nombre: string;
+    tipo: string;
+    extra: string;
 }

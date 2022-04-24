@@ -14,13 +14,13 @@ export class AppComponent {
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
     { title: 'Cuentas', url: '/home', icon: 'wallet' },
     { title: 'Prestamos', url: '/prestamo', icon: 'cash' },
-    { title: 'Inversiones', url: '/inversion', icon: 'pie-chart' },//por verificar o ese o diamond
+    { title: 'Inversiones', url: '/formcertificado', icon: 'pie-chart' },//por verificar o ese o diamond
     { title: 'Solicitudes', url: '/solicitud', icon: 'receipt' },
     { title: 'Descuentos', url: '/descuento', icon: 'calculator' },
     { title: 'Noticias', url: '/noticia', icon: 'newspaper' },
     { title: 'Sugerencias', url: '/infosugerencia', icon: 'folder' },
     { title: 'Ayuda', url: '/ayuda', icon: 'help' },
-    { title: 'Tasas', url: '/tasas', icon: 'stats-chart' },
+    // { title: 'Tasas', url: '/tasas', icon: 'stats-chart' },
     { title: 'Videos', url: '/videos', icon: 'film' },
     { title: 'Contactos', url: '/contacto', icon: 'mail' },
     { title: 'Configuración', url: '/configuracion', icon: 'cog' },

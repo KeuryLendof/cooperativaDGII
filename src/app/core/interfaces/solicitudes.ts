@@ -1,5 +1,5 @@
 export interface ISolicitudes{
-    nombre: string,
-    fecha: string,
-    estado: string
+    nombre: string;
+    fecha: string;
+    estado: string;
 }
