@@ -1,0 +1,41 @@
+//Tabla
+table {
+    background-color: rgba(255, 255, 255, 0.212);
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+}
+
+thead {
+    background-color: var(--ion-color-verde);
+    border-bottom: solid 5px #0F362D;
+    color: #63c58c;
+    border: #ffffff;
+}
+
+tr:hover td {
+    background-color: var(--ion-color-amarillo);
+    color: #ffffff;
+}
+
+ion-label-Informacion {
+    color: var(--ion-color-azul);
+}
+
+.Informacion {
+    text-align: center;
+    align-items: center;
+}

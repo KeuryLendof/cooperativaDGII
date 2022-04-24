@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-formcertificado',
@@ -7,9 +9,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormcertificadoPage implements OnInit {
 
-  constructor() { }
+  monto: number;
+  plazo: number;
+  taza: number;
+
+  constructor(public alertController: AlertController , private router: Router) { }
 
   ngOnInit() {
   }
+
+  Calcular(){
+    this.router.navigate(['/resultcertificado',this.monto,this.plazo,this.taza]);
+  }
+
+
+
+ /* async getMultiplicationTable(monto , plaza , taza){
+    if (monto == "" && plaza == "" && taza == "") {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Ingresar valores en las casillas correspondiente',
+        buttons: ['OK'],
+      });
+      
+      await alert.present();
+    }
+       else {
+      this.multipleArray = [];
+      for (let i = 1; i <=plaza; i++) {
+        this.multipleArray.push({
+          monto: monto,
+          i: i,
+          taza : taza,
+         interes: (parseInt(monto) +  (1+(taza/100))^plaza)
+        });
+      }
+    }
+  
+  }  */
 
 }

@@ -1,9 +1,73 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>formcertificado</ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>Inversiones</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="ion-padding">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Inversiones</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
+    <form action="" class="form">
+
+        <ion-item>
+            <ion-text slot="start"><b>Monto de Inversion</b></ion-text>
+            <ion-input name="Monto" type="number" placeholder="0.00RD$" [(ngModel)]="monto"></ion-input>
+
+            <ion-icon slot="end" name="cash-outline"></ion-icon>
+        </ion-item>
+        <ion-item>
+            <ion-text slot="start"><b>Plazo de Inversion</b></ion-text>
+            <ion-input name="Plazo" type="number" placeholder="1 Meses" [(ngModel)]="plazo"></ion-input>
+            <ion-icon slot="end" name="calendar-outline"></ion-icon>
+        </ion-item>
+        <ion-item>
+            <ion-text slot="start"><b>Taza de Interes</b></ion-text>
+            <ion-input name="Taza" type="number" placeholder="0.00" [(ngModel)]="taza"></ion-input>
+            <ion-label color="amarillo">%</ion-label>
+            <ion-icon slot="end" name="trending-up-outline"></ion-icon>
+        </ion-item>
+        <!--      Reinvertir
+        <ion-item>
+            <ion-text slot="start"><b>Reinventir?</b></ion-text>
+            <ion-segment value="Selecionar">
+                <ion-segment-button value="Si">
+                    <ion-label color="amarillo">Si</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="No">
+                    <ion-label color="amarillo">No</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+            <ion-icon slot="end" name="help-circle"></ion-icon>
+        </ion-item>
+     -->
+        <div class="BUTTON">
+            <ion-button color="azul" type="submit" (click)="Calcular()">
+                <b>
+                    Calcular
+                </b>
+            </ion-button>
+        </div>
+    </form>
+    <!--
+    <ion-content *ngIf="multipleArray?.length > 0">
+        <table>
+            <thead>
+                <tr>
+                    <th>PLAZO</th>
+                    <th>INTERES</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let multiple of multipleArray">
+                <td>{{multiple.i}} <span>Mes</span></td>
+                <td>{{multiple.interes}} <span>%</span></td>
+                <td>{{multiple.Result}}</td>
+            </tr>
+        </table>
+    </ion-content>
+    -->
 </ion-content>

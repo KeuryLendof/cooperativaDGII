@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/formcertificado"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Resultados de Inversiones</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+    <table>
+        <thead>
+            <tr>
+                <th>PLAZO</th>
+                <th>INTERES</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let multiple of multipleArray">
+            <td>{{multiple.i}} <span>Mes</span></td>
+            <td>{{multiple.taza}} <span>%</span></td>
+            <td>{{multiple.interes}} <span>RD$</span></td>
+        </tr>
+    </table>
+    <br>
+    <div class="Informacion">
+        <ion-label-Informacion>Certificado Financiero. Esta información es una proyección, la cual puede variar por diversas razones, tales como: Atraso, pagos incompletos, abonos extraordinarios a capital, entre otras.</ion-label-Informacion>
+    </div>
+</ion-content>
