@@ -34,16 +34,16 @@ ion-content{
     .solicitud{
         background: linear-gradient(90deg, var(--ion-color-verde-tint) 10%, var(--ion-color-verde) 100%);
         box-shadow: 0 1px 10px var(--ion-color-light);
-        height: 30vh;
+        // height: 30vh;
         padding: 4px 10px 20px 10px;
         border-radius: 0 0 28px 28px;
         margin: 0 auto;
         text-align: center;
-        img{
+        // img{
             
-            width: 250px;
-            height: 270px;
-        }
+        //     width: 250px;
+        //     height: 270px;
+        // }
     }
 
     .container {

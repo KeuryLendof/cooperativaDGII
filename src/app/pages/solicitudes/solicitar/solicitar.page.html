@@ -1,28 +1,22 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-        <ion-title>Solicitar Servicios</ion-title>
+        <ion-title>Solicitar Servicio</ion-title>
         <ion-buttons slot="end">
-            <ion-button onclick="dismissModal()">Close</ion-button>
+            <ion-button (click)="canDismiss()">Close</ion-button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-
-    <!-- <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="large">Solicitar Servicios</ion-title>
-        </ion-toolbar>
-    </ion-header> -->
+<ion-content [fullscreen]="true">
 
     <ion-list lines="full" class="ion-no-margin">
         <ion-list-header>
-            <ion-label> Datos de la Ubicacion </ion-label>
+            <ion-label>{{nombre}}</ion-label>
         </ion-list-header>
 
         <ion-item>
             <ion-label>Nombre</ion-label>
-            <ion-input placeholder="....." type="text" name="nom">
+            <ion-input placeholder="....." clearInput type="text" name="nom">
                 <!-- //[(ngModel)]="nombre" -->
             </ion-input>
         </ion-item>
@@ -31,8 +25,8 @@
             <ion-label>Latitud</ion-label>
             <ion-input placeholder=" 19.801154158829164" type="number" [(ngModel)]="latitud" name="lat"></ion-input>
         </ion-item> -->
-        <!-- style="text-align: center !important;" -->
-        <div class="btn-solicitar">
+
+        <div class="btn-solicitar" style="text-align: center !important;">
             <ion-button shape="round" (click)="solicitar()" class="center" color="verde">
                 Solicitar
                 <ion-icon slot="end" name="duplicate-outline"></ion-icon>

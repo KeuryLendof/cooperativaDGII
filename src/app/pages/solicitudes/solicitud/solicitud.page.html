@@ -13,17 +13,15 @@
   </div>
 
   <ion-row>
-    <ion-col col="6">
-      <h2>Nueva Solicitud ></h2>
-    </ion-col>
-    <ion-col col="6">
-       <ion-fab horizontal="end">
-          <ion-fab-button>
-            <ion-icon name="add"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
+    <ion-col></ion-col>
+    <ion-col>
+      <ion-button (click)="openSelect()" color="azul">
+        Nueva solicitud
+        <ion-icon name="add" slot="end"></ion-icon>
+      </ion-button>
     </ion-col>
   </ion-row>
+
   <div class="container">
     <ion-item lines="none" *ngFor="let item of solicitud">
       <ion-icon slot="start" name='mail-outline'></ion-icon>
@@ -33,9 +31,13 @@
           {{item.fecha}}
         </p>
       </ion-label>
-      <ion-text slot="end" [color]="item.respuesta == Procesada? 'success' : 'danger'">{{item.respuesta}}</ion-text>
+      <ion-chip outline [color]="changeColor(item.respuesta)">
+        <ion-icon [name]="changeIcon(item.respuesta)">
+        </ion-icon>
+        <ion-label>{{item.respuesta}}</ion-label>
+      </ion-chip>
     </ion-item>
   </div>
-    
-  
+
+
 </ion-content>
