@@ -1,9 +1,43 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>solicitud</ion-title>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar lines="none">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <div class="solicitud">
+    <img src="../../../../assets/img/3d-flame-287.png" alt="">
+  </div>
+
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col>
+      <ion-button (click)="openSelect()" color="azul">
+        Nueva solicitud
+        <ion-icon name="add" slot="end"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <div class="container">
+    <ion-item lines="none" *ngFor="let item of solicitud">
+      <ion-icon slot="start" name='mail-outline'></ion-icon>
+      <ion-label size="large" class="ion-text-wrap">
+        <b>{{item.titulo}}</b>
+        <p>
+          {{item.fecha}}
+        </p>
+      </ion-label>
+      <ion-chip outline [color]="changeColor(item.respuesta)">
+        <ion-icon [name]="changeIcon(item.respuesta)">
+        </ion-icon>
+        <ion-label>{{item.respuesta}}</ion-label>
+      </ion-chip>
+    </ion-item>
+  </div>
+
 
 </ion-content>

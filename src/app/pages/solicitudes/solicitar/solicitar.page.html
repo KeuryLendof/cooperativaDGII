@@ -1,59 +1,37 @@
-<ion-header>
+<ion-header [translucent]="true">
     <ion-toolbar>
-        <ion-title>solicitar</ion-title>
+        <ion-title>Solicitar Servicio</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="canDismiss()">Close</ion-button>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-list>
-        <ion-item>
-            <ion-label>Tipo de Solicitud</ion-label>
 
-            <ion-select [compareWith]="compareWith">
-                <ion-select-option *ngFor="let user of users" [value]="user">{{user.TipoDeSolicitud}}</ion-select-option>
-            </ion-select>
-        </ion-item>
+    <ion-list lines="full" class="ion-no-margin">
+        <ion-list-header>
+            <ion-label>{{nombre}}</ion-label>
+        </ion-list-header>
+
         <ion-item>
-            <ion-label>Codigo</ion-label>
-            <ion-select [compareWith]="compareWith">
-                <ion-select-option *ngFor="let user of users" [value]="user">{{user.Codigo}}</ion-select-option>
-            </ion-select>
+            <ion-label>Nombre</ion-label>
+            <ion-input placeholder="....." clearInput type="text" name="nom">
+                <!-- //[(ngModel)]="nombre" -->
+            </ion-input>
         </ion-item>
-        <ion-item>
-            <ion-text>Extraer Todo el Listado</ion-text>
-            <ion-checkbox color="primary" slot="start"></ion-checkbox>
-            <ion-button slot="end" color="secondary" style="margin-top: 10px;">Buscar</ion-button>
-        </ion-item>
+
+        <!-- <ion-item>
+            <ion-label>Latitud</ion-label>
+            <ion-input placeholder=" 19.801154158829164" type="number" [(ngModel)]="latitud" name="lat"></ion-input>
+        </ion-item> -->
+
+        <div class="btn-solicitar" style="text-align: center !important;">
+            <ion-button shape="round" (click)="solicitar()" class="center" color="verde">
+                Solicitar
+                <ion-icon slot="end" name="duplicate-outline"></ion-icon>
+            </ion-button>
+        </div>
     </ion-list>
 
-    <ion-grid>
-        <ion-row>
-            <ion-col>
-                <ion-item>
-                    <ion-label slot="start">Solicitud</ion-label>
-                    <ion-card-subtitle slot="end">Solicitud Préstamo Gerencial</ion-card-subtitle>
-                </ion-item>
-                <ion-item>
-                    <ion-label slot="start">Codigo</ion-label>
-                    <ion-card-subtitle slot="end">2323233</ion-card-subtitle>
-                </ion-item>
-                <ion-item>
-                    <ion-label slot="start">Solicitud</ion-label>
-                    <ion-card-subtitle slot="end">Solicitud Préstamo Gerencial</ion-card-subtitle>
-                </ion-item>
-                <ion-item>
-                    <ion-label slot="start">Fecha</ion-label>
-                    <ion-card-subtitle slot="end">-- / -- / ----</ion-card-subtitle>
-                </ion-item>
-                <ion-item>
-                    <ion-label slot="start">Comentario</ion-label>
-                    <ion-card-subtitle slot="end">La Rosa De Guadalupe</ion-card-subtitle>
-                </ion-item>
-                <ion-item>
-                    <ion-label slot="start">Estado</ion-label>
-                    <ion-card-subtitle slot="end">Pediente</ion-card-subtitle>
-                </ion-item>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
 </ion-content>
