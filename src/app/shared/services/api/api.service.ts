@@ -4,6 +4,8 @@ import { ISolicitudesTipo } from './../../../core/interfaces/solicitudesTipos';
 import { IDescuentos } from './../../../core/interfaces/descuentos';
 import { INoticias } from './../../../core/interfaces/noticias';
 import { ILogueado } from './../../../core/interfaces/logueado';
+import { IResponse } from './../../../core/interfaces/response.interface';
+import { ILogin } from './../../../core/interfaces/login.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -128,8 +130,19 @@ export class ApiService {
   //POST
 
   //LOGIN
-  postLogin(form: ILogueado): Observable<ILogueado>{
-    return this.http.post<ILogueado>(this.hostApi + 'login', form);
+  postLogin(form: ILogin): Observable<IResponse>{
+    console.log(form);
+    return this.http.post<IResponse>(this.hostApi + 'login', form);
+  }
+
+  postLog(form: ILogin): Observable<IResponse>{
+    console.log(form);
+    const body = JSON.stringify(form);
+    console.log(body);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+    return this.http.post<IResponse>(this.hostApi+ 'login', body, { headers });
   }
 
   // postSolicitudesRegistro(actor: IActor): Observable<IActor>{

@@ -12,16 +12,16 @@
     <ion-img src="../../assets/img/Logo-copdgi.png"></ion-img>
   </div>
 
-  <form action="" class="form">
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" class="form">
     <ion-list lines="none">
       <ion-item>
         <ion-icon name="person-outline"></ion-icon>
-        <ion-input name="user" type="number" placeholder="Cédula"></ion-input>
+        <ion-input name="user" type="number" placeholder="Cédula" formControlName="usuario"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon name="key-outline"></ion-icon>
-        <ion-input name="pass" type="password" placeholder="Contraseña"></ion-input>
+        <ion-input name="pass" type="password" placeholder="Contraseña" formControlName="clave"></ion-input>
       </ion-item>
     </ion-list>
 
