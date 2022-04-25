@@ -1,3 +1,4 @@
+import { IResponse } from './../../core/interfaces/response.interface';
 import { Component, OnInit } from '@angular/core';
 
 //formularios
@@ -7,6 +8,8 @@ import { ApiService } from 'src/app/shared/services/api/api.service';
 //INTERFACE
 import { ILogueado } from './../../core/interfaces/logueado';
 import { ILogin } from './../../core/interfaces/login.interface';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +29,8 @@ export class LoginPage implements OnInit {
   });
 
   constructor(private formBuilder: FormBuilder,
-              private api: ApiService) { }
+              private api: ApiService,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -35,6 +39,19 @@ export class LoginPage implements OnInit {
     console.log(form);
     this.api.postLog(form).subscribe(data => {
       console.log(data);
+
+      const dataResponse: IResponse = data;
+      if(data.success){
+        console.log('entre al true');
+        localStorage.setItem('token', data.data.token);
+        localStorage.setItem('nombre', data.data.nombre);
+        this.router.navigate(['/home']);
+      }
+      console.log(data.success);
+      console.log(data.data.token);
+      console.log('DATOS DEL TOKEM ----');
+      console.log(localStorage.getItem('token'));
+      console.log(localStorage.getItem('nombre'));
     });
   }
 
