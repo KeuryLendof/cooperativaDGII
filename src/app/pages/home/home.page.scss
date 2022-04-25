@@ -16,6 +16,9 @@ ion-header {
     ion-grid {
       width: 100%;
       position: absolute;
+      ion-slide {  
+         
+      } 
       ion-row {
         ion-card{
           background: linear-gradient(90deg, var(--ion-color-verde-tint) 10%, var(--ion-color-verde) 100%);
@@ -63,8 +66,8 @@ ion-header {
         ion-list{
           text-align: center;
           margin: 0 auto;
-          margin-top: 18px;
-          margin-bottom: 23px;
+          margin-top: 28px;
+          margin-bottom: 8px;
           width: 95%;
           ion-item{
             border-radius: 30px;
