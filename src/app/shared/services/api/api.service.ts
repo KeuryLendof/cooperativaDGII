@@ -51,6 +51,16 @@ export class ApiService {
 
   // GetPost
 
+  //RESUMEN
+  postResumen(resumen: IResumen): Observable<IResumen>{
+    //EJEMPLO PARA OTROS POST QUE SE LE DEBE ENVIAR token - tipo - data
+    const data = new FormData();
+    // data.append('token','TESTACCOUNTTOKEN434234345424323JAJAJA');
+    // data.append('tipo',resumen.tipo);
+    // data.append('data',resumen);
+    // data.append('data',JSON.stringify(resumen));
+    return this.http.post<IResumen>(this.hostApi + 'resumen', data);
+  }
   // postResumen(resumen: IResumen): Observable<IResumen>{
   //   const token = localStorage.getItem('token');
     // const headers = new HttpHeaders({
@@ -136,13 +146,17 @@ export class ApiService {
   }
 
   postLog(form: ILogin): Observable<IResponse>{
-    console.log(form);
-    const body = JSON.stringify(form);
-    console.log(body);
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
-    });
-    return this.http.post<IResponse>(this.hostApi+ 'login', body, { headers });
+    const data = new FormData();
+    data.append('usuario',form.usuario);
+    data.append('clave',form.clave);
+    console.log(data);
+    return this.http.post<IResponse>(this.hostApi + 'login', data);
+    //EJEMPLO PARA OTROS POST QUE SE LE DEBE ENVIAR token - tipo - data
+    // data.append('tipo',form.usuario);
+    // data.append('data',form.clave);
+    // data.append('token',form.usuario);
+    // data.append('data',JSON.stringify(form));
+    //return this.http.post<IResponse>(this.hostApi + 'login', data);
   }
 
   // postSolicitudesRegistro(actor: IActor): Observable<IActor>{
