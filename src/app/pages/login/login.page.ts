@@ -45,6 +45,8 @@ export class LoginPage implements OnInit {
         console.log('entre al true');
         localStorage.setItem('token', data.data.token);
         localStorage.setItem('nombre', data.data.nombre);
+        localStorage.setItem('puesto', data.data.puesto);
+        localStorage.setItem('gmail', data.data.email);
         this.router.navigate(['/home']);
       }
       console.log(data.success);

@@ -24,7 +24,7 @@ ion-header {
           background: linear-gradient(90deg, var(--ion-color-verde-tint) 10%, var(--ion-color-verde) 100%);
           box-shadow: 0 1px 10px var(--ion-color-light);
           color:white;
-          height: 25vh;
+          height: 30vh;
           width: 95%;
           ion-text{
             font-size: 30px;
@@ -33,6 +33,10 @@ ion-header {
           .ultimaConexion{
             font-size: 15px;
             font-weight: 300;
+          }
+          .ultimaConexion2{
+            text-align: end;
+            margin-top: 14%;
           }
         }
         .opcionesP{
@@ -66,7 +70,7 @@ ion-header {
         ion-list{
           text-align: center;
           margin: 0 auto;
-          margin-top: 28px;
+          margin-top: 18px;
           margin-bottom: 8px;
           width: 95%;
           ion-item{

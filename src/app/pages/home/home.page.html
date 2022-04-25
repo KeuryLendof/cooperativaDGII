@@ -1,149 +1,149 @@
 <ion-header class="ion-no-border">
   
-   <ion-button fill="clear" color="dark">
-      <ion-menu-button></ion-menu-button>
-   </ion-button>
- 
+  <ion-button fill="clear" color="dark">
+     <ion-menu-button></ion-menu-button>
+  </ion-button>
+
 </ion-header>
 
 <ion-content [fullscreen]="true" color="light">
 
-  <ion-grid>
-    <ion-row>
-      <ion-card>
-        <ion-card-header>
-         
-          <ion-row>
-            <ion-col size="10">
-              <ion-chip>
-                <ion-avatar>
-                  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-                </ion-avatar>
-                <ion-label>Amadis Biloglow</ion-label>
-              </ion-chip>
-            </ion-col>
-            <ion-col size="2">
-              <ion-button fill="clear" color="light">
-                <ion-icon name="notifications-outline"></ion-icon>
-              </ion-button>
-            </ion-col>
-          </ion-row>
+ <ion-grid>
+   <ion-row>
+     <ion-card>
+       <ion-card-header>
         
-          
-        </ion-card-header>
-        <ion-card-content>
+         <ion-row>
+           <ion-col size="10">
+             <ion-chip>
+               <ion-avatar>
+                 <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+               </ion-avatar>
+               <ion-label>{{nombre}}</ion-label>
+             </ion-chip>
+           </ion-col>
+           <ion-col size="2">
+             <ion-button fill="clear" color="light">
+               <ion-icon name="notifications-outline"></ion-icon>
+             </ion-button>
+           </ion-col>
+         </ion-row>
+       
+         
+       </ion-card-header>
+       <ion-card-content>
 
-          <ion-row>
-            <ion-col size="9">
-              <ion-text>{{mostrarSaludo(probando)}}</ion-text>
-            </ion-col>
-            <ion-col size="3">
-              <ion-avatar>
-                <img [src]="mostrarSaludoImagen(probando)">
-              </ion-avatar>
-            </ion-col>
-          </ion-row>
+         <ion-row>
+           <ion-col size="9">
+             <ion-text>{{mostrarSaludo(probando)}}</ion-text>
+           </ion-col>
+           <ion-col size="3">
+             <ion-avatar>
+               <img [src]="mostrarSaludoImagen(probando)">
+             </ion-avatar>
+           </ion-col>
+         </ion-row>
 
-          <ion-row>
-            <ion-col size="4">
-              <ion-text class="ultimaConexion">Tecnico</ion-text>
-            </ion-col>
-            <ion-col size="8">
-              <ion-text class="ultimaConexion">Ultima conexion: 20/04/22 9:56:33am</ion-text>
-            </ion-col>
-          </ion-row>
-          
-        </ion-card-content>
-      </ion-card>
-    </ion-row>
+         <ion-row>
+           <ion-col size="4">
+             <ion-text class="ultimaConexion">{{puesto}}</ion-text>
+           </ion-col>
+           <ion-col class="ultimaConexion2" size="8">
+             <ion-text class="ultimaConexion">{{gmail}}</ion-text>
+           </ion-col>
+         </ion-row>
+         
+       </ion-card-content>
+     </ion-card>
+   </ion-row>
 
-    
-    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment" color="verde" scrollable>
+   
+   <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment" color="verde" scrollable>
 
-        <ion-segment-button value="0" onclick="mostrarCuentas()">
-          <ion-icon name="card-outline"></ion-icon>
-          <ion-label>Cuentas</ion-label>
-        </ion-segment-button>
+       <ion-segment-button value="0" onclick="mostrarCuentas()">
+         <ion-icon name="card-outline"></ion-icon>
+         <ion-label>Cuentas</ion-label>
+       </ion-segment-button>
 
-        <ion-segment-button value="1">
-          <ion-icon name="cash-outline"></ion-icon>
-          <ion-label>Prestamos</ion-label>
-        </ion-segment-button>
+       <ion-segment-button value="1">
+         <ion-icon name="cash-outline"></ion-icon>
+         <ion-label>Prestamos</ion-label>
+       </ion-segment-button>
 
-        <ion-segment-button value="2">
-          <ion-icon name="server-outline"></ion-icon>
-          <ion-label>Inversion</ion-label>
-        </ion-segment-button>
+       <ion-segment-button value="2">
+         <ion-icon name="server-outline"></ion-icon>
+         <ion-label>Inversion</ion-label>
+       </ion-segment-button>
 
-    </ion-segment>
+   </ion-segment>
 
-    <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true">  
-      <ion-slide>
-        <ion-list>
-          <!-- <ion-list-header>
-            <ion-label>CUENTAS</ion-label>
-          </ion-list-header> -->
-          <ion-item lines="none" detail [routerLink]="['/cuenta']">
-            <ion-icon slot="start" name='card-outline'></ion-icon>
-            <ion-label size="large" class="ion-text-wrap">
-              <b>Cuenta Aportaciones</b>
-              <p>
-                10000103038
-              </p>
-            </ion-label>
-            <ion-text slot="end">350,000Dop</ion-text>
-          </ion-item>
-        </ion-list>
-      </ion-slide>  
-      <ion-slide>
-        <ion-list [style]="mostrarPrestamos(vista)">
-          <!-- <ion-list-header>
-            <ion-label>PRESTAMOS</ion-label>
-          </ion-list-header> -->
-          <ion-item lines="none" detail [routerLink]="['/prestamo']">
-            <ion-icon slot="start" name='server-outline'></ion-icon>
-            <ion-label size="large" class="ion-text-wrap">
-              <b>Prestamo Normal</b>
-              <p>
-                10000103038
-              </p>
-            </ion-label>
-            <ion-text slot="end">100,000Dop</ion-text>
-          </ion-item>
-          <ion-item lines="none">
-            <ion-icon slot="start" name='server-outline'></ion-icon>
-            <ion-label size="large" class="ion-text-wrap">
-              <b>Prestamo Gerencial</b>
-              <p>
-                10000103038
-              </p>
-            </ion-label>
-            <ion-text slot="end">50,000Dop</ion-text>
-          </ion-item>
-        </ion-list>
-      </ion-slide>  
-      <ion-slide>
-        <ion-list>
-          <!-- <ion-list-header>
-            <ion-label>INVERSION</ion-label>
-          </ion-list-header> -->
-          <ion-item lines="none">
-            <ion-icon slot="start" name='cash-outline'></ion-icon>
-            <ion-label size="large" class="ion-text-wrap">
-              <b>Certificado Financiero</b>
-              <p>
-                10000103038
-              </p>
-            </ion-label>
-            <ion-text slot="end">150,000Dop</ion-text>
-          </ion-item>
-        </ion-list>
-      </ion-slide>  
-    </ion-slides>  
-      
-    
-  </ion-grid>
-  <!-- <app-tab></app-tab> -->
+   <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true">  
+     <ion-slide>
+       <ion-list>
+         <ion-list-header>
+           <ion-label>CUENTAS</ion-label>
+         </ion-list-header>
+         <ion-item lines="none" detail [routerLink]="['/cuenta']">
+           <ion-icon slot="start" name='card-outline'></ion-icon>
+           <ion-label size="large" class="ion-text-wrap">
+             <b>Cuenta Aportaciones</b>
+             <p>
+               10000103038
+             </p>
+           </ion-label>
+           <ion-text slot="end">350,000Dop</ion-text>
+         </ion-item>
+       </ion-list>
+     </ion-slide>  
+     <ion-slide>
+       <ion-list [style]="mostrarPrestamos(vista)">
+         <ion-list-header>
+           <ion-label>PRESTAMOS</ion-label>
+         </ion-list-header>
+         <ion-item lines="none" detail [routerLink]="['/prestamo']">
+           <ion-icon slot="start" name='server-outline'></ion-icon>
+           <ion-label size="large" class="ion-text-wrap">
+             <b>Prestamo Normal</b>
+             <p>
+               10000103038
+             </p>
+           </ion-label>
+           <ion-text slot="end">100,000Dop</ion-text>
+         </ion-item>
+         <ion-item lines="none">
+           <ion-icon slot="start" name='server-outline'></ion-icon>
+           <ion-label size="large" class="ion-text-wrap">
+             <b>Prestamo Gerencial</b>
+             <p>
+               10000103038
+             </p>
+           </ion-label>
+           <ion-text slot="end">50,000Dop</ion-text>
+         </ion-item>
+       </ion-list>
+     </ion-slide>  
+     <ion-slide>
+       <ion-list>
+         <ion-list-header>
+           <ion-label>INVERSION</ion-label>
+         </ion-list-header>
+         <ion-item lines="none">
+           <ion-icon slot="start" name='cash-outline'></ion-icon>
+           <ion-label size="large" class="ion-text-wrap">
+             <b>Certificado Financiero</b>
+             <p>
+               10000103038
+             </p>
+           </ion-label>
+           <ion-text slot="end">150,000Dop</ion-text>
+         </ion-item>
+       </ion-list>
+     </ion-slide>  
+   </ion-slides>  
+     
+   
+ </ion-grid>
+ <!-- <app-tab></app-tab> -->
 </ion-content>
 
 <!-- <app-tab></app-tab> -->

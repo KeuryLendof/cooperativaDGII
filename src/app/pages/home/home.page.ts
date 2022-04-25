@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {IonSlides } from '@ionic/angular';  
+import {IonSlides } from '@ionic/angular';
+import { ILogin } from 'src/app/core/interfaces/login.interface';
+import { ApiService } from 'src/app/shared/services/api/api.service'; 
 
 
 @Component({
@@ -13,12 +15,18 @@ export class HomePage implements OnInit {
 
   segment = 0;
 
+  nombre = localStorage.getItem('nombre');
+  puesto = localStorage.getItem('puesto');
+  gmail = localStorage.getItem('gmail');
+
   probando = new Date().getHours();
 
   cuentas = 'block'
   prestamos = 'display:block'
 
-  constructor() { }
+  data:ILogin[]|undefined;
+
+  constructor(private api: ApiService) { }
 
   async segmentChanged(ev: any) {  
     await this.slider.slideTo(this.segment);  
@@ -28,8 +36,8 @@ export class HomePage implements OnInit {
   }  
   
 
-  ngOnInit() {
-
+  ngOnInit(): void {
+    
   }
 
   mostrarCuentas(){
