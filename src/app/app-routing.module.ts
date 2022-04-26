@@ -80,7 +80,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/ayuda/preguntas/preguntas.module').then( m => m.PreguntasPageModule)
   },
   {
-    path: 'infopregunta',
+    path: 'infopregunta/:titulo/:subtitulo/:contenido',
     loadChildren: () => import('./pages/ayuda/infopregunta/infopregunta.module').then( m => m.InfopreguntaPageModule)
   },
   {
