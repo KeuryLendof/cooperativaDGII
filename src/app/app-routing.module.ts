@@ -56,7 +56,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/sugerencias/formsugerencia/formsugerencia.module').then( m => m.FormsugerenciaPageModule)
   },
   {
-    path: 'infonoticia',
+    path: 'infonoticia/:ID/:TITLE/:IMAGEN/:DATE/:CONTENT',
     loadChildren: () => import('./pages/noticias/infonoticia/infonoticia.module').then( m => m.InfonoticiaPageModule)
   },
   {
