@@ -23,18 +23,18 @@
   </ion-row>
 
   <div class="container">
-    <ion-item lines="none" *ngFor="let item of solicitud">
-      <ion-icon slot="start" name='mail-outline'></ion-icon>
+    <ion-item lines="none" *ngFor="let solicitud of solicitados">
+      <ion-icon slot="start" name='receipt-outline'></ion-icon>
       <ion-label size="large" class="ion-text-wrap">
-        <b>{{item.titulo}}</b>
+        <b>{{solicitud.nombre === null ? 'Solicitud' : solicitud.nombre}}</b>
         <p>
-          {{item.fecha}}
+          {{solicitud.fecha}}
         </p>
       </ion-label>
-      <ion-chip outline [color]="changeColor(item.respuesta)">
-        <ion-icon [name]="changeIcon(item.respuesta)">
+      <ion-chip outline [color]="changeColor(solicitud.estado)">
+        <ion-icon [name]="changeIcon(solicitud.estado)">
         </ion-icon>
-        <ion-label>{{item.respuesta}}</ion-label>
+        <ion-label>{{solicitud.estado}}</ion-label>
       </ion-chip>
     </ion-item>
   </div>
