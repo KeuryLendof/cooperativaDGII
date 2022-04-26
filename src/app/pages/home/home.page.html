@@ -60,7 +60,7 @@
    
    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment" color="verde" scrollable>
 
-       <ion-segment-button value="0" onclick="mostrarCuentas()">
+       <ion-segment-button value="0">
          <ion-icon name="card-outline"></ion-icon>
          <ion-label>Cuentas</ion-label>
        </ion-segment-button>
@@ -83,42 +83,34 @@
          <ion-list-header>
            <ion-label>CUENTAS</ion-label>
          </ion-list-header>
-         <ion-item lines="none" detail [routerLink]="['/cuenta']">
+         <ion-item *ngFor="let cuenta of cuentas" lines="none" detail
+         (click)="imprimirDataCuenta(cuenta)">
            <ion-icon slot="start" name='card-outline'></ion-icon>
            <ion-label size="large" class="ion-text-wrap">
-             <b>Cuenta Aportaciones</b>
+             <b>{{cuenta.tipo}}</b>
              <p>
-               10000103038
+               {{cuenta.idcuenta}}
              </p>
            </ion-label>
-           <ion-text slot="end">350,000Dop</ion-text>
+           <ion-text slot="end">{{cuenta.balance_disponible}}</ion-text>
          </ion-item>
        </ion-list>
      </ion-slide>  
      <ion-slide>
-       <ion-list [style]="mostrarPrestamos(vista)">
+       <ion-list>
          <ion-list-header>
            <ion-label>PRESTAMOS</ion-label>
          </ion-list-header>
-         <ion-item lines="none" detail [routerLink]="['/prestamo']">
+         <ion-item *ngFor="let prestamo of prestamos" lines="none" detail
+          (click)="imprimirData(prestamo)">
            <ion-icon slot="start" name='server-outline'></ion-icon>
            <ion-label size="large" class="ion-text-wrap">
-             <b>Prestamo Normal</b>
+             <b>{{prestamo.descripcion}}</b>
              <p>
-               10000103038
+               {{prestamo.act}}
              </p>
            </ion-label>
-           <ion-text slot="end">100,000Dop</ion-text>
-         </ion-item>
-         <ion-item lines="none">
-           <ion-icon slot="start" name='server-outline'></ion-icon>
-           <ion-label size="large" class="ion-text-wrap">
-             <b>Prestamo Gerencial</b>
-             <p>
-               10000103038
-             </p>
-           </ion-label>
-           <ion-text slot="end">50,000Dop</ion-text>
+           <ion-text slot="end">{{prestamo.balance_prestamo}}</ion-text>
          </ion-item>
        </ion-list>
      </ion-slide>  

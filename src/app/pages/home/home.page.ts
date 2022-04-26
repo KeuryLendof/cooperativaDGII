@@ -1,7 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import {IonSlides } from '@ionic/angular';
 import { ILogin } from 'src/app/core/interfaces/login.interface';
+import { IResumen } from 'src/app/core/interfaces/resumen';
+import { IPrestamos } from 'src/app/core/interfaces/prestamos';
 import { ApiService } from 'src/app/shared/services/api/api.service';
+import {ServicesService} from 'src/app/shared/services/services.service';
+import { IPrueba } from 'src/app/core/interfaces/prueba';
+
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,6 +17,7 @@ import { ApiService } from 'src/app/shared/services/api/api.service';
 })
 export class HomePage implements OnInit {
 
+  @Input() prestamos: IPrestamos[]=[];
   @ViewChild('slides', { static: true }) slider: IonSlides;
 
   segment = 0;
@@ -21,12 +28,11 @@ export class HomePage implements OnInit {
 
   probando = new Date().getHours();
 
-  cuentas = 'block';
-  prestamos = 'display:block';
-
+  public cuentas: IResumen[]=[];
+  prueba: IPrueba[]=[];
   data: ILogin[]|undefined;
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private servicio: ServicesService, private router: Router) { }
 
   reloadPage(){
     window.location.reload();
@@ -41,18 +47,34 @@ export class HomePage implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.api.postResumen().then(res=>{
+      console.log(res);
+      this.cuentas = res.data['cuentas'];
+      console.log(this.cuentas);
+    });
+    this.api.postPrestamos().then(res=>{
+      console.log(res);
+      this.prestamos = res.data;
+      console.log(this.prestamos);
+    });
   }
 
-  mostrarCuentas(){
-    this.prestamos = 'display:none';
+  redireccionar(){
+    this.router.navigate(['/prestamo']);
   }
 
-  mostrarPrestamos(vista){
+  imprimirData(datain: any){
+    console.log(datain);
+    console.log(datain.idprestamo);
 
-    vista = this.prestamos;
-    return vista;
+    this.router.navigate(['/prestamo',datain.idprestamo, datain.descripcion, datain.monto_prestamo,
+      datain.tasa_interes, datain.fecha_prestamo, datain.fecha_vencimiento, datain.monto_interes_calculado,
+     datain.valor_cuota, datain.monto_seguro_pagado, datain.balance_prestamo, datain.consecutivo_cuota]);
 
+  }
+  imprimirDataCuenta(datain: any){
+    this.router.navigate(['/cuenta',datain.idcuenta, datain.tipo, datain.balance_disponible,
+    datain.monto_ult_deposito, datain.monto_ult_retiro]);
   }
 
   mostrarSaludo(saludo){

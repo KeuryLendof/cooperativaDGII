@@ -56,15 +56,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/sugerencias/formsugerencia/formsugerencia.module').then( m => m.FormsugerenciaPageModule)
   },
   {
-    path: 'infonoticia',
+    path: 'infonoticia/:ID/:TITLE/:IMAGEN/:DATE/:CONTENT',
     loadChildren: () => import('./pages/noticias/infonoticia/infonoticia.module').then( m => m.InfonoticiaPageModule)
   },
   {
-    path: 'cuenta',
+    path: 'cuenta/:idcuenta/:tipo/:balanceDisponible/:montoUltDeposito/:montoUltRetiro',
     loadChildren: () => import('./pages/productos/cuenta/cuenta.module').then( m => m.CuentaPageModule)
   },
   {
-    path: 'prestamo',
+    path: 'prestamo/:idprestamo/:descripcion/:montoPrestamo/:tasaInteres/:fechaPrestamo/:fechaVencimiento/:montoInteres/:cuota/:montoSeguro/:balancePrestamo/:consecutivoCuota',
     loadChildren: () => import('./pages/productos/prestamo/prestamo.module').then( m => m.PrestamoPageModule)
   },
   {

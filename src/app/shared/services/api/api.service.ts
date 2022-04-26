@@ -63,14 +63,9 @@ export class ApiService {
   // GetPost
 
   //RESUMEN
-  postResumen(resumen: IResumen): Observable<IResumen>{
-    //EJEMPLO PARA OTROS POST QUE SE LE DEBE ENVIAR token - tipo - data
-    const data = new FormData();
-    // data.append('token','TESTACCOUNTTOKEN434234345424323JAJAJA');
-    // data.append('tipo',resumen.tipo);
-    // data.append('data',resumen);
-    // data.append('data',JSON.stringify(resumen));
-    return this.http.post<IResumen>(this.hostApi + 'resumen', data);
+  postResumen(): Promise<IResumen>{
+    
+    return this.http.post<IResumen>(this.hostApi + 'resumen', this._formData).toPromise();
   }
   postDescuentos(): Promise<IDescuentos>{
 
