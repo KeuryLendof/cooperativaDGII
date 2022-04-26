@@ -60,7 +60,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/noticias/infonoticia/infonoticia.module').then( m => m.InfonoticiaPageModule)
   },
   {
-    path: 'cuenta',
+    path: 'cuenta/:idcuenta/:tipo/:balanceDisponible/:montoUltDeposito/:montoUltRetiro',
     loadChildren: () => import('./pages/productos/cuenta/cuenta.module').then( m => m.CuentaPageModule)
   },
   {
