@@ -95,27 +95,27 @@ export class ApiService {
     //return this.http.post<IDescuentos>(this.hostApi + 'descuentos', this.)
     // return this.http.get(this.hostApi +'descuentos');
   }
-  
+
   //PRESTAMOS
   postPrestamos(): Promise<IPrestamos>{
     return this.http.post<IPrestamos>(this.hostApi + 'prestamos',this._formData).toPromise();
   }
 
   //SOLICITUDES
-  postSolicitud(): Promise<ISolicitudesTipo>{
-    return this.http.post<ISolicitudesTipo>(this.hostApi + 'solicitudes_tipos',this._formData).toPromise();
+  postSolicitud(): Promise<ISolicitudes>{
+    return this.http.post<ISolicitudes>(this.hostApi + 'solicitudes',this._formData).toPromise();
   }
 
   //TIPOS DE SOLICITUDES
-  postSolicitudes(): Promise<ISolicitudes>{
-    return this.http.post<ISolicitudes>(this.hostApi + 'solicitudes',this._formData).toPromise();
+  postSolicitudesTipo(): Promise<ISolicitudesTipo>{
+    return this.http.post<ISolicitudesTipo>(this.hostApi + 'solicitudes_tipos',this._formData).toPromise();
   }
 
   //NOTICIAS
   postNoticias(): Promise<INoticias>{
     return this.http.post<INoticias>(this.hostApi + 'noticias',this._formData).toPromise();
   }
-  
+
   // postResumen(resumen: IResumen): Observable<IResumen>{
   //   const token = localStorage.getItem('token');
     // const headers = new HttpHeaders({
@@ -214,7 +214,6 @@ export class ApiService {
     //return this.http.post<IResponse>(this.hostApi + 'login', data);
   }
 
-  
   // postSolicitudesRegistro(actor: IActor): Observable<IActor>{
   //   let Token = localStorage.getItem("Token");
   //   const headers = new HttpHeaders({

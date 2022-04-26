@@ -1,6 +1,8 @@
 import { SolicitarPage } from './../solicitar/solicitar.page';
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
+import { ApiService } from 'src/app/shared/services/api/api.service';
+import { ISolicitudes } from 'src/app/core/interfaces/solicitudes';
 
 @Component({
   selector: 'app-solicitud',
@@ -9,10 +11,12 @@ import { AlertController, ModalController } from '@ionic/angular';
 })
 export class SolicitudPage implements OnInit {
 
+  public solicitados: ISolicitudes[]=[];
+
   solicitud: any[] = [
-    {id: 1, titulo: 'Solicitud Préstamo Gerencial', fecha: '21/04/2022', respuesta: 'Pendiente'},
-    {id: 2, titulo: 'Disminución de Aportación', fecha: '18/04/2022', respuesta: 'Declinada'},
-    {id: 3, titulo: 'Solicitud de Cancelacion San Coopdgii', fecha: '07/04/2022', respuesta: 'Procesada'}
+    {id: 1, titulo: 'Solicitud Préstamo Gerencial', fecha: '21/04/2022', respuesta: 'pendiente'},
+    {id: 2, titulo: 'Disminución de Aportación', fecha: '18/04/2022', respuesta: 'declinada'},
+    {id: 3, titulo: 'Solicitud de Cancelacion San Coopdgii', fecha: '07/04/2022', respuesta: 'procesada'}
   ];
 
   tipo = 'Inicial';
@@ -35,31 +39,43 @@ export class SolicitudPage implements OnInit {
   // ];
 
   constructor(public alertController: AlertController,
-              public modalController: ModalController) { }
+              public modalController: ModalController,
+              private api: ApiService) { }
 
   ngOnInit() {
+    this.api.postSolicitud().then(res=>{
+      console.log(res);
+      this.solicitados = res.data;
+      console.log(this.solicitados);
+    });
   }
 
   changeColor(color){
-    if(color === 'Declinada'){
-      return 'danger';
-    }
-    else if(color === 'Pendiente'){
+    if(color === 'pendiente'){
       return 'warning';
     }
-    else{
+    else if(color === 'declinada'){
+      return 'danger';
+    }
+    else if(color === 'procesada'){
       return 'success';
+    }
+    else{
+      return 'secondary';
     }
   }
   changeIcon(icon){
-    if(icon === 'Declinada'){
+    if(icon === 'pendiente'){
+      return 'hourglass-outline';
+    }
+    else if(icon === 'declinada'){
       return 'close-circle-outline';
     }
-    else if(icon === 'Pendiente'){
-      return 'hourglass-outline';//clipboard-outline
+    else if(icon === 'procesada'){
+      return 'checkmark-circle-outline';
     }
     else{
-      return 'checkmark-circle-outline';
+      return 'clipboard-outline';
     }
   }
 
