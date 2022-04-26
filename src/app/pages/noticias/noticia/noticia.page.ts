@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from 'src/app/shared/services/api/api.service';
+import {INoticias} from 'src/app/core/interfaces/noticias';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-noticia',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoticiaPage implements OnInit {
 
-  constructor() { }
+  public noticias: INoticias[]=[];
+  // id: string;
 
-  ngOnInit() {
+  constructor(private api: ApiService, private router: Router) { }
+
+  ngOnInit(): void{
+    this.api.postNoticias().then(res=>{
+      console.log(res);
+      this.noticias = res.data;
+      console.log(this.noticias);
+    });
   }
+
+  // FullNoticia(ID){
+  //   this.router.navigate(['/infonoticia',ID]);
+  //   //[routerLink]="['']"
+  // }
 
 }
