@@ -1,7 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import {IonSlides } from '@ionic/angular';
-import { ILogin } from 'src/app/core/interfaces/login.interface';
+import { IResumen } from 'src/app/core/interfaces/resumen';
+import { IPrestamos } from 'src/app/core/interfaces/prestamos';
 import { ApiService } from 'src/app/shared/services/api/api.service'; 
+import {ServicesService} from 'src/app/shared/services/services.service';
+import { IPrueba } from 'src/app/core/interfaces/prueba';
+
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,6 +15,7 @@ import { ApiService } from 'src/app/shared/services/api/api.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+
 
   @ViewChild('slides', { static: true }) slider: IonSlides;
 
@@ -21,12 +27,15 @@ export class HomePage implements OnInit {
 
   probando = new Date().getHours();
 
-  cuentas = 'block'
-  prestamos = 'display:block'
+  // cuentas = 'block'
+  // prestamos = 'display:block'
 
-  data:ILogin[]|undefined;
+  
 
-  constructor(private api: ApiService) { }
+  public cuentas: IResumen[]=[];
+  @Input() prestamos: IPrestamos[]=[];
+  prueba: IPrueba[]=[];
+  constructor(private api: ApiService, private servicio: ServicesService, private router: Router) { }
 
   async segmentChanged(ev: any) {  
     await this.slider.slideTo(this.segment);  
@@ -37,19 +46,49 @@ export class HomePage implements OnInit {
   
 
   ngOnInit(): void {
-    
+    this.api.postResumen().then(res=>{
+      console.log(res);
+      this.cuentas = res.data['cuentas'];
+      console.log(this.cuentas);
+    })
+    this.api.postPrestamos().then(res=>{
+      console.log(res)
+      this.prestamos = res.data;
+      console.log(this.prestamos)
+    })
   }
 
-  mostrarCuentas(){
-    this.prestamos = 'display:none'
+  redireccionar(){
+    this.router.navigate(['/prestamo']);
   }
 
-  mostrarPrestamos(vista){
+  imprimirData(datain:any){
+    console.log(datain)
+    console.log(datain.idprestamo)
 
-    vista = this.prestamos
-    return vista;
+    this.router.navigate(['/prestamo',datain.idprestamo, datain.descripcion, datain.monto_prestamo,
+      datain.tasa_interes, datain.fecha_prestamo, datain.fecha_vencimiento, datain.monto_interes_calculado,
+     datain.valor_cuota, datain.monto_seguro_pagado, datain.balance_prestamo, datain.consecutivo_cuota]);
 
+    //this.prueba = datain;
+    // this.servicio.disparador.emit({
+    //   data:datain
+    // })
+    // setTimeout(()=>{
+    //   this.redireccionar();
+    // },2000)
   }
+
+  // mostrarCuentas(){
+  //   this.prestamos = 'display:none'
+  // }
+
+  // mostrarPrestamos(vista){
+
+  //   vista = this.prestamos
+  //   return vista;
+
+  // }
 
   mostrarSaludo(saludo){
 

@@ -64,7 +64,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/productos/cuenta/cuenta.module').then( m => m.CuentaPageModule)
   },
   {
-    path: 'prestamo',
+    path: 'prestamo/:idprestamo/:descripcion/:montoPrestamo/:tasaInteres/:fechaPrestamo/:fechaVencimiento/:montoInteres/:cuota/:montoSeguro/:balancePrestamo/:consecutivoCuota',
     loadChildren: () => import('./pages/productos/prestamo/prestamo.module').then( m => m.PrestamoPageModule)
   },
   {
