@@ -8,21 +8,19 @@
 
 <ion-content>
 
-  <ion-content>
-
-    <div class="prestamo">
+    <div class="prestamo" *ngFor="let prestamo of multipleArray">
 
       <ion-card class="principalPrestamo">
         <ion-card-content class="ion-text-left">
-          <ion-card-title class="ion-margin-top ion-margin-bottom ion-text-center titulo">PRESTAMOS NORMALES</ion-card-title>
+          <ion-card-title class="ion-margin-top ion-margin-bottom ion-text-center titulo">{{prestamo.descripcion}}</ion-card-title>
           <ion-row>
             <ion-col col="6">
               <ion-card-subtitle class="ion-margin-top ion-text-center titulo">Fecha Inicio</ion-card-subtitle>
-              <ion-card-title class="ion-margin-bottom ion-text-center">18/09/2019</ion-card-title>
+              <ion-card-title class="ion-margin-bottom ion-text-center">{{prestamo.fechaPrestamo}}</ion-card-title>
             </ion-col>
             <ion-col col="6">
               <ion-card-subtitle class="ion-margin-top ion-text-center titulo">Fecha Fin</ion-card-subtitle>
-              <ion-card-title class="ion-margin-bottom ion-text-center">23/05/2025</ion-card-title>
+              <ion-card-title class="ion-margin-bottom ion-text-center">{{prestamo.fechaVencimiento}}</ion-card-title>
             </ion-col>
           </ion-row>
           
@@ -35,7 +33,7 @@
       
     </div>
 
-    <div class="container">
+    <div *ngFor="let prestamo of multipleArray" class="container">
 
       <ion-row>
         <ion-col col="6">
@@ -64,7 +62,7 @@
           <ion-label slot="end" size="large" class="ion-text-wrap">
             <b>22 de Abril 2022</b>
             <p>
-              <ion-badge color="primary">+9,095.71</ion-badge>
+              <ion-badge color="primary">+{{prestamo.cuota}}</ion-badge>
             </p>
           </ion-label>
       </ion-item>
@@ -79,7 +77,7 @@
           <ion-label slot="end" size="large" class="ion-text-wrap">
             <b>22 de Abril 2022</b>
             <p>
-              <ion-badge color="primary">+9,095.71</ion-badge>
+              <ion-badge color="primary">+{{prestamo.cuota}}</ion-badge>
             </p>
           </ion-label>
       </ion-item>
@@ -94,7 +92,7 @@
           <ion-label slot="end" size="large" class="ion-text-wrap">
             <b>22 de Abril 2022</b>
             <p>
-              <ion-badge color="primary">+9,095.71</ion-badge>
+              <ion-badge color="primary">+{{prestamo.cuota}}</ion-badge>
             </p>
           </ion-label>
       </ion-item>
@@ -105,31 +103,31 @@
             <ion-row>
               <ion-col col="6">
                 <ion-card-subtitle class="ion-margin-top ion-text-center">Monto Prestamo</ion-card-subtitle>
-                <ion-card-title class="ion-margin-bottom ion-text-center">555,107.39</ion-card-title>
+                <ion-card-title class="ion-margin-bottom ion-text-center">{{prestamo.montoPrestamo}}</ion-card-title>
               </ion-col>
               <ion-col col="6">
                 <ion-card-subtitle class="ion-margin-top ion-text-center">Tasa Interes</ion-card-subtitle>
-                <ion-card-title class="ion-margin-bottom ion-text-center">0.66</ion-card-title>
+                <ion-card-title class="ion-margin-bottom ion-text-center">{{prestamo.tasaInteres}}</ion-card-title>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col col="6">
                 <ion-card-subtitle class="ion-margin-top ion-text-center">Monto Seguro</ion-card-subtitle>
-                <ion-card-title class="ion-margin-bottom ion-text-center">158.52</ion-card-title>
+                <ion-card-title class="ion-margin-bottom ion-text-center">{{prestamo.montoSeguro}}</ion-card-title>
               </ion-col>
               <ion-col col="6">
                 <ion-card-subtitle class="ion-margin-top ion-text-center">Valor Cuota</ion-card-subtitle>
-                <ion-card-title class="ion-margin-bottom ion-text-center">9,095.71</ion-card-title>
+                <ion-card-title class="ion-margin-bottom ion-text-center">{{prestamo.cuota}}</ion-card-title>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col col="6">
                 <ion-card-subtitle class="ion-margin-top ion-text-center">Consecutivo Cuota</ion-card-subtitle>
-                <ion-card-title class="ion-margin-bottom ion-text-center">66</ion-card-title>
+                <ion-card-title class="ion-margin-bottom ion-text-center">{{prestamo.consecutivoCuota}}</ion-card-title>
               </ion-col>
               <ion-col col="6">
                 <ion-card-subtitle class="ion-margin-top ion-text-center">Balance Prestamo</ion-card-subtitle>
-                <ion-card-title class="ion-margin-bottom ion-text-center">310,759.78</ion-card-title>
+                <ion-card-title class="ion-margin-bottom ion-text-center">{{prestamo.balancePrestamo}}</ion-card-title>
               </ion-col>
             </ion-row>
           </ion-content>
