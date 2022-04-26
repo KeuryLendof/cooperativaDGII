@@ -10,6 +10,7 @@ import { ILogueado } from './../../core/interfaces/logueado';
 import { ILogin } from './../../core/interfaces/login.interface';
 
 import { Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +31,8 @@ export class LoginPage implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private api: ApiService,
-              private router: Router) { }
+              private router: Router,
+              public loadingController: LoadingController) { }
 
   ngOnInit() {
     // this.checkLocalStorage();
@@ -46,8 +48,14 @@ export class LoginPage implements OnInit {
   }
 
   onLogin(form: ILogin){
+
+    this.presentLoadingWithOptions();
+
     console.log(form);
     this.api.postLog(form).subscribe(data => {
+
+      this.loadingController.dismiss();
+
       console.log(data);
 
       const dataResponse: IResponse = data;
@@ -68,6 +76,21 @@ export class LoginPage implements OnInit {
       console.log(localStorage.getItem('token'));
       console.log(localStorage.getItem('nombre'));
     });
+  }
+
+  async presentLoadingWithOptions() {
+    const loading = await this.loadingController.create({
+      // spinner: null,
+      // duration: 5000,
+      message: 'Iniciando Sesión...',
+      //translucent: true,
+      // cssClass: 'custom-class custom-loading',
+      backdropDismiss: true
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed with role:', role);
   }
 
 }
