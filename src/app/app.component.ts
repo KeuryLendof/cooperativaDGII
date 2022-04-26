@@ -13,7 +13,7 @@ export class AppComponent {
   ];
   public appPagesAll = [
     { title: 'Cuentas', url: '/home', icon: 'wallet' },
-    { title: 'Prestamos', url: '/prestamo', icon: 'cash' },
+    // { title: 'Prestamos', url: '/prestamo', icon: 'cash' },
     { title: 'Inversiones', url: '/formcertificado', icon: 'pie-chart' },//por verificar o ese o diamond
     { title: 'Solicitudes', url: '/solicitud', icon: 'receipt' },
     { title: 'Descuentos', url: '/descuento', icon: 'calculator' },
