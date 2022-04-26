@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.checkLocalStorage()
+    this.checkLocalStorage();
   }
 
   checkLocalStorage(){

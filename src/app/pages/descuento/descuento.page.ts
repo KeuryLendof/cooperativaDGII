@@ -11,14 +11,14 @@ export class DescuentoPage implements OnInit {
 
 
   public descuentos: IDescuentos[]=[];
-  constructor(private api:ApiService) { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
     this.api.postDescuentos().then(res=>{
-      console.log(res)
-      this.descuentos = res.data[0].mes;
-      console.log(this.descuentos)
-    })
+      console.log(res);
+      this.descuentos = res.data;
+      console.log(this.descuentos);
+    });
   }
 
   // postDescuentos(descuentos: IDescuentos){

@@ -19,12 +19,11 @@ export class ApiService {
 
   private hostApi = 'https://coopdgii.com/coopvirtual/App/';
   private _formData: FormData;
-  private _token: string
+  private _token: string;
 
   token = localStorage.getItem('token');
 
-  constructor(private http: HttpClient) { 
-
+  constructor(private http: HttpClient) {
     this._formData = new FormData();
     this._token = localStorage.getItem('token');
     this._formData.append('token',this._token);

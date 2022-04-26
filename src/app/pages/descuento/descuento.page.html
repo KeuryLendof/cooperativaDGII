@@ -16,7 +16,26 @@
 
     <h2>Descuentos</h2>
 
-    <ion-item>
+    <ion-list *ngFor="let descuento of descuentos">
+      <ion-item *ngFor="let detalle of descuento.det">
+        <ion-label size="large" class="">
+          <b>{{detalle.descripcion}}</b>
+          <p>
+            {{detalle.fecha_aplicacion}}
+          </p>
+        </ion-label>
+        <ion-label slot="end" size="large" class="ion-text-wrap">
+          <b>
+            <ion-badge color="danger">{{detalle.monto}}</ion-badge>
+          </b>
+          <p>
+            {{detalle.mes_str}}
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <!-- <ion-item>
       <ion-label size="large" class="">
           <b>Plan funeral</b>
           <p>
@@ -46,7 +65,7 @@
           Abril
         </p>
       </ion-label>
-    </ion-item>
+    </ion-item> -->
 
   </div>
 

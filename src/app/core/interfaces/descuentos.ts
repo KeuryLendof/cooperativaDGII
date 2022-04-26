@@ -5,7 +5,5 @@ export interface IDescuentos{
     //     descripcion: string;
     //     monto: string;
     //     fechaAplicacion: string;
-    //     mesStr: string; 
-    
-    
+    //     mesStr: string;
 }
