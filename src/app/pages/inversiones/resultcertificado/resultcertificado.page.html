@@ -8,23 +8,27 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-
-    <table>
-        <thead>
-            <tr>
-                <th>PLAZO</th>
-                <th>INTERES</th>
-                <th>TOTAL</th>
+    <div class="Informacion">
+        <ion-text> <b>Certificado Financiero</b> </ion-text>
+    </div>
+    <ion-card class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>PLAZO</th>
+                    <th>INTERES</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let multiple of multipleArray">
+                <td>{{multiple.i}} <span>Mes</span></td>
+                <td>{{multiple.tazas}} <span>%</span></td>
+                <td>{{multiple.total}} <span>RD$</span></td>
             </tr>
-        </thead>
-        <tr *ngFor="let multiple of multipleArray">
-            <td>{{multiple.i}} <span>Mes</span></td>
-            <td>{{multiple.taza}} <span>%</span></td>
-            <td>{{multiple.interes}} <span>RD$</span></td>
-        </tr>
-    </table>
+        </table>
+    </ion-card>
     <br>
     <div class="Informacion">
-        <ion-label-Informacion>Certificado Financiero. Esta información es una proyección, la cual puede variar por diversas razones, tales como: Atraso, pagos incompletos, abonos extraordinarios a capital, entre otras.</ion-label-Informacion>
+        <ion-label>Esta información es una proyección, la cual puede variar por diversas razones, tales como: Atraso, pagos incompletos, abonos extraordinarios a capital, entre otras.</ion-label>
     </div>
 </ion-content>

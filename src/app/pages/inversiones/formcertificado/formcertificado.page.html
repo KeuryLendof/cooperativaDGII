@@ -12,7 +12,10 @@
     </ion-header>
 
     <form action="" class="form">
-
+        <div class="Informacion">
+            <ion-text> <b>Consultar Certificado Financiero</b> </ion-text>
+        </div>
+        <br>
         <ion-item>
             <ion-text slot="start"><b>Monto de Inversion</b></ion-text>
             <ion-input name="Monto" type="number" placeholder="0.00RD$" [(ngModel)]="monto"></ion-input>
@@ -45,7 +48,7 @@
         </ion-item>
      -->
         <div class="BUTTON">
-            <ion-button color="azul" type="submit" (click)="Calcular()">
+            <ion-button color="azul" type="submit" (click)="Calcular(monto,plazo,taza)">
                 <b>
                     Calcular
                 </b>

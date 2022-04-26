@@ -24,3 +24,12 @@ ion-text {
     text-align: center;
     align-items: center;
 }
+
+.Informacion {
+    text-align: center;
+    align-items: center;
+    ion-text {
+        color: var(--ion-color-azu);
+        font-size: 20px;
+    }
+}
