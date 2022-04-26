@@ -33,13 +33,16 @@ export class LoginPage implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.checkLocalStorage();
+    // this.checkLocalStorage();
   }
 
   checkLocalStorage(){
     if(localStorage.getItem('token')){
       this.router.navigate(['/home']);
     }
+  }
+  reloadPage(){
+    location.reload();
   }
 
   onLogin(form: ILogin){
@@ -55,6 +58,9 @@ export class LoginPage implements OnInit {
         localStorage.setItem('puesto', data.data.puesto);
         localStorage.setItem('gmail', data.data.email);
         this.router.navigate(['/home']);
+        setInterval(() => {
+          this.reloadPage();
+        }, 500);
       }
       console.log(data.success);
       console.log(data.data.token);

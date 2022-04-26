@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {IonSlides } from '@ionic/angular';
 import { ILogin } from 'src/app/core/interfaces/login.interface';
-import { ApiService } from 'src/app/shared/services/api/api.service'; 
+import { ApiService } from 'src/app/shared/services/api/api.service';
 
 
 @Component({
@@ -21,32 +21,36 @@ export class HomePage implements OnInit {
 
   probando = new Date().getHours();
 
-  cuentas = 'block'
-  prestamos = 'display:block'
+  cuentas = 'block';
+  prestamos = 'display:block';
 
-  data:ILogin[]|undefined;
+  data: ILogin[]|undefined;
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService) {}
 
-  async segmentChanged(ev: any) {  
-    await this.slider.slideTo(this.segment);  
-  }  
-  async slideChanged() {  
-    this.segment = await this.slider.getActiveIndex();  
-  }  
-  
+  reloadPage(){
+    window.location.reload();
+  }
+
+  async segmentChanged(ev: any) {
+    await this.slider.slideTo(this.segment);
+  };
+  async slideChanged() {
+    this.segment = await this.slider.getActiveIndex();
+  };
+
 
   ngOnInit(): void {
-    
+
   }
 
   mostrarCuentas(){
-    this.prestamos = 'display:none'
+    this.prestamos = 'display:none';
   }
 
   mostrarPrestamos(vista){
 
-    vista = this.prestamos
+    vista = this.prestamos;
     return vista;
 
   }
@@ -54,24 +58,24 @@ export class HomePage implements OnInit {
   mostrarSaludo(saludo){
 
     if(saludo<12){
-      return 'Buenos Dias'
+      return 'Buenos Dias';
     }
     if(saludo>12 && saludo<18){
-      return 'Buenas Tardes'
+      return 'Buenas Tardes';
     }else{
-      return 'Buenas Noches'
+      return 'Buenas Noches';
     }
   }
 
   mostrarSaludoImagen(hora){
 
     if(hora<12){
-      return '../../../assets/img/sol.png'
+      return '../../../assets/img/sol.png';
     }
     if(hora>12 && hora<18){
-      return '../../../assets/img/atardecer.png'
+      return '../../../assets/img/atardecer.png';
     }else{
-      return '../../../assets/img/luna.png'
+      return '../../../assets/img/luna.png';
     }
   }
 
