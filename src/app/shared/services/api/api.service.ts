@@ -9,6 +9,8 @@ import { ILogin } from './../../../core/interfaces/login.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { promise } from 'protractor';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +18,17 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   private hostApi = 'https://coopdgii.com/coopvirtual/App/';
+  private _formData: FormData;
+  private _token: string
 
-  constructor(private http: HttpClient) { }
+  token = localStorage.getItem('token');
+
+  constructor(private http: HttpClient) { 
+
+    this._formData = new FormData();
+    this._token = localStorage.getItem('token');
+    this._formData.append('token',this._token);
+  }
 
   //GET
 
@@ -41,9 +52,9 @@ export class ApiService {
     return this.http.get(this.hostApi +'solicitudes_tipo');
   }
 
-  getDescuentos(): Observable<any>{
-    return this.http.get(this.hostApi +'descuentos');
-  }
+  // getDescuentos(): Observable<any>{
+  //   return this.http.get(this.hostApi +'descuentos');
+  // }
 
   getNoticias(): Observable<any>{
     return this.http.get(this.hostApi +'noticias');
@@ -60,6 +71,29 @@ export class ApiService {
     // data.append('data',resumen);
     // data.append('data',JSON.stringify(resumen));
     return this.http.post<IResumen>(this.hostApi + 'resumen', data);
+  }
+  postDescuentos(): Promise<IDescuentos>{
+
+    return this.http.post<IDescuentos>(this.hostApi + 'descuentos',this._formData).toPromise();
+
+    // const data = new FormData();
+
+    // data.append('token', localStorage.getItem('token'));
+
+    // data.append('tipo',descuentos.mes);
+
+    // data.append('data',JSON.stringify(descuentos));
+
+    // return this.http.post<IDescuentos>(this.hostApi + 'descuentos', data);
+
+    // const data = token
+
+    // data.append('data',JSON.stringify(token));
+
+    //let direccion = this.hostApi +'descuentos', data;
+
+    //return this.http.post<IDescuentos>(this.hostApi + 'descuentos', this.)
+    // return this.http.get(this.hostApi +'descuentos');
   }
   // postResumen(resumen: IResumen): Observable<IResumen>{
   //   const token = localStorage.getItem('token');
@@ -159,6 +193,7 @@ export class ApiService {
     //return this.http.post<IResponse>(this.hostApi + 'login', data);
   }
 
+  
   // postSolicitudesRegistro(actor: IActor): Observable<IActor>{
   //   let Token = localStorage.getItem("Token");
   //   const headers = new HttpHeaders({

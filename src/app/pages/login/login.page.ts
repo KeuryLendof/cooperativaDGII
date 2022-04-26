@@ -33,6 +33,13 @@ export class LoginPage implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    this.checkLocalStorage()
+  }
+
+  checkLocalStorage(){
+    if(localStorage.getItem('token')){
+      this.router.navigate(['/home']);
+    }
   }
 
   onLogin(form: ILogin){
