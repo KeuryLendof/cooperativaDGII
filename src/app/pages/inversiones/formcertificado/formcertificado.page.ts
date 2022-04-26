@@ -18,8 +18,20 @@ export class FormcertificadoPage implements OnInit {
   ngOnInit() {
   }
 
-  Calcular(){
-    this.router.navigate(['/resultcertificado',this.monto,this.plazo,this.taza]);
+  async Calcular(){
+    if (this.monto && this.plazo && this.taza) {
+      this.router.navigate(['/resultcertificado',this.monto,this.plazo,this.taza]);
+    }
+    else{
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Ingresar valores en las casillas correspondiente',
+        buttons: ['OK'],
+      });
+      
+      await alert.present();
+    }
+    
   }
 
 

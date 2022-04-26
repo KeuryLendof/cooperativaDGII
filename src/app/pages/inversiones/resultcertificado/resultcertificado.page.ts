@@ -27,8 +27,8 @@ Calculando(monto,plazo,taza){
     this.multipleArray.push({
       monto: monto,
       i: i,
-      taza : taza,
-     interes: (parseInt(monto) +  (1+(taza/100))^plazo)
+      tazas :(1+(taza/100)**plazo),
+      total:(monto * (1+taza/100)**i)
     });
   }
 
