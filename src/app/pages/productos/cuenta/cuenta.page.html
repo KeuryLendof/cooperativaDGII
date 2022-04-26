@@ -1,15 +1,15 @@
 <ion-header class="ion-no-border">
   
-	<ion-item lines="none">
+	<ion-item lines="none" (click)="cerrarCuenta()">
 
-		<ion-avatar defaultHref="/home" slot="start">
+		<ion-avatar slot="start">
       <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
     </ion-avatar>
 			<ion-label>
 				<p>Hola,</p>
 				<h3>Amadis Bilow</h3>
 			</ion-label>
-    	<ion-avatar defaultHref="/home" slot="end">
+    	<ion-avatar [routerLink]="['/home']" slot="end">
         <img src="../../../../assets/img/salida.png">
       </ion-avatar>
 
@@ -22,16 +22,16 @@
   <div class="slides ion-margin-bottom">
     <ion-slides [options]="slidesOptions">
       <ion-slide>
-        <ion-card>
+        <ion-card *ngFor="let cuenta of multipleArray">
           <ion-card-header>
             
           </ion-card-header>
           <ion-card-content class="ion-text-left">
             <!-- <ion-card-subtitle class="ion-margin-bottom cuenta">Cuenta aportaciones</ion-card-subtitle>
             <ion-card-subtitle class="ion-margin-bottom">1000 0103 0388</ion-card-subtitle> right -->
-            <ion-card-title class="ion-margin-bottom ion-text-center saldoPrincipal">350,000Dop</ion-card-title>
-            <ion-card-subtitle class="ion-margin-top ion-text-center cuenta">Cuenta aportaciones</ion-card-subtitle>
-            <ion-card-subtitle class="ion-margin-top ion-text-center">1000 0103 0388 
+            <ion-card-title class="ion-margin-bottom ion-text-center saldoPrincipal">{{cuenta.balanceDisponible}}</ion-card-title>
+            <ion-card-subtitle class="ion-margin-top ion-text-center cuenta">{{cuenta.tipo}}</ion-card-subtitle>
+            <ion-card-subtitle class="ion-margin-top ion-text-center">{{cuenta.idcuenta}} 
               <ion-icon name="copy-outline"></ion-icon>
             </ion-card-subtitle>
           </ion-card-content>
@@ -41,7 +41,7 @@
     </ion-slides>
   </div>
 
-  <div class="container">
+  <div class="container" *ngFor="let cuenta of multipleArray">
 
     <h2>Historial</h2>
 
@@ -49,13 +49,13 @@
       <ion-label size="large" class="">
           <b>Cobro IMP</b>
           <p>
-            10000103038
+            {{cuenta.idcuenta}}
           </p>
         </ion-label>
         <ion-label slot="end" class="ion-text-wrap">
           <b>21 de Abril 2022</b>
           <p>
-            <ion-badge color="danger">-55.00</ion-badge>
+            <ion-badge color="danger">-{{cuenta.montoUltRetiro}}</ion-badge>
           </p>
         </ion-label>
     </ion-item>
@@ -64,13 +64,13 @@
       <ion-label size="large" class="">
           <b>Deposito</b>
           <p>
-            10000103038
+            {{cuenta.idcuenta}}
           </p>
         </ion-label>
         <ion-label slot="end" size="large" class="ion-text-wrap">
           <b>22 de Abril 2022</b>
           <p>
-            <ion-badge color="primary">+5,000.00</ion-badge>
+            <ion-badge color="primary">+{{cuenta.montoUltDeposito}}</ion-badge>
           </p>
         </ion-label>
         

@@ -83,7 +83,8 @@
          <ion-list-header>
            <ion-label>CUENTAS</ion-label>
          </ion-list-header>
-         <ion-item *ngFor="let cuenta of cuentas" lines="none" detail [routerLink]="['/cuenta']">
+         <ion-item *ngFor="let cuenta of cuentas" lines="none" detail
+         (click)="imprimirDataCuenta(cuenta)">
            <ion-icon slot="start" name='card-outline'></ion-icon>
            <ion-label size="large" class="ion-text-wrap">
              <b>{{cuenta.tipo}}</b>

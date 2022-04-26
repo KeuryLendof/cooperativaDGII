@@ -78,6 +78,9 @@ export class HomePage implements OnInit {
     //   this.redireccionar();
     // },2000)
   }
+  imprimirDataCuenta(datain:any){
+    this.router.navigate(['/cuenta',datain.idcuenta, datain.tipo, datain.balance_disponible, datain.monto_ult_deposito, datain.monto_ult_retiro])
+  }
 
   // mostrarCuentas(){
   //   this.prestamos = 'display:none'
