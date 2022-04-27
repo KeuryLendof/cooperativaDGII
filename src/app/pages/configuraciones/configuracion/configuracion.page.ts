@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfiguracionPage implements OnInit {
 
+  nombre = localStorage.getItem('nombre');
+
   constructor() { }
 
   ngOnInit() {

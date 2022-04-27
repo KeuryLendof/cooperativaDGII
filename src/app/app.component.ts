@@ -26,6 +26,8 @@ export class AppComponent {
     { title: 'Cerrar Sesión', url: '/login', icon: 'log-out' },
   ];
 
+  nombre = localStorage.getItem('nombre');
+
   private token: string;
 
   constructor() {this.token = localStorage.getItem('token');}
